@@ -1,5 +1,6 @@
 package com.example.mencak.ui.login
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import com.example.mencak.R
 import com.example.mencak.databinding.ActivityLoginBinding
+import com.example.mencak.ui.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -21,6 +23,10 @@ class LoginActivity : AppCompatActivity() {
         setupView()
 
         showLoading(false)
+
+        binding.signupTextViewButton.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
     }
 
     private fun showLoading(isLoading: Boolean) {

@@ -1,4 +1,56 @@
 <resources>
     <string name="app_name">Mencak</string>
+    <string name="signup">SignUp</string>
     <string name="login">Login</string>
+    <string name="title_signup_page">Complete your data below, OK?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="link_signup"><u>Sign Up</u></string>
+    <string name="message_login">Already have an account?</string>
+    <string name="link_login"><u>Login</u></string>
+    <string name="message_login_page">Enter your data first</string>
+    <string name="title_login_page">Are you ready to upgrade your skills?</string>
+    <string name="name">Name</string>
+    <string name="message_main_page">Happy Learning in Dicoding.</string>
+    <string name="copyright">© 2021 Dicoding</string>
+    <string name="logout">Logout</string>
+
+    <string name="list_story_name">Name</string>
+    <string name="story_description">Description</string>
+    <string name="create_story">Create Story</string>
+    <string name="maps">Maps</string>
+
+    <string name="camera_x">CameraX</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="upload">Upload</string>
+    <string name="message_signup">Dont have an account?</string>
+
+    <string name="error_email">Wrong email format</string>
+    <string name="error_password">Password at least 6 character long</string>
+    <string name="error_camera_take">Failed to take picture.</string>
+    <string name="error_camera_add">Failed showing camera</string>
+    <string name="error_retrofit">Failed instance retrofit</string>
+    <string name="error_maps">Failed showing maps</string>
+
+    <string name="add_picture">Please add picture first.</string>
+    <string name="add_name">Add name</string>
+    <string name="add_email">Add email</string>
+    <string name="add_password">Add password</string>
+
+    <string name="signup_success">The account is ready. Come on, login and learn coding.</string>
+    <string name="signup_failed">"The account is failed. Please put correct registration or email already registered."</string>
+    <string name="email_success">You have successfully logged in. Can\'t wait to learn huh?</string>
+    <string name="email_failed">You failed to login. Make sure the Email and Password are correct.</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+
+    <string name="title_activity_maps">Submission 2 Intermediate</string>
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satellite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
+
+    <string name="retry">Retry</string>
+
 </resources>
