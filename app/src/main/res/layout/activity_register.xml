@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:srcCompat="@drawable/ini_logo" />
+        app:srcCompat="@drawable/ini_logo"
+        android:contentDescription="@string/signup" />
 
     <TextView
         android:id="@+id/titleTextView"
@@ -133,16 +134,14 @@
 
     <Button
         android:id="@+id/signupButton"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="98dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/black"
         android:text="@string/signup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+        app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
 
     <TextView
         android:id="@+id/loginTextView"
@@ -153,7 +152,7 @@
         android:text="@string/message_login"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupButton" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
 
     <TextView
         android:id="@+id/loginTextViewButton"
@@ -164,7 +163,7 @@
         android:text="@string/link_login"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/loginTextView"
-        app:layout_constraintTop_toBottomOf="@+id/signupButton" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontal"
