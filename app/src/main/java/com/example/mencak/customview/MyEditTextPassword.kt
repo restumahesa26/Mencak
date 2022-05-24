@@ -5,6 +5,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
+import com.example.mencak.R
 
 class MyEditTextPassword : AppCompatEditText {
     constructor(context: Context) : super(context) {
@@ -33,7 +34,7 @@ class MyEditTextPassword : AppCompatEditText {
 
             override fun afterTextChanged(s: Editable) {
                 if (s.toString().length < 6) {
-//                    setError(resources.getString(R.string.error_password), null)
+                    setError(resources.getString(R.string.error_password), null)
                 }
             }
         })

@@ -1,26 +1,28 @@
-//package com.example.mencak.model.api
-//
-//import okhttp3.MultipartBody
-//import okhttp3.RequestBody
-//import retrofit2.Call
-//import retrofit2.http.*
-//
-//interface ApiService {
-//    @POST("register")
-//    @FormUrlEncoded
-//    suspend fun createRegister(
-//        @Field("name") name: String,
-//        @Field("email") email: String,
-//        @Field("password") password: String
-//    ): RegisterResponse
-//
-//    @FormUrlEncoded
-//    @POST("login")
-//    suspend fun showLogin(
-//        @Field("email") email: String,
-//        @Field("password") password: String
-//    ): LoginResponse
-//
+package com.example.mencak.model.api
+
+import com.example.mencak.model.response.MencakResponse.LoginResponse
+import com.example.mencak.model.response.MencakResponse.RegisterResponse
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.Call
+import retrofit2.http.*
+
+interface ApiService {
+    @POST("register")
+    @FormUrlEncoded
+    suspend fun createRegister(
+        @Field("name") name: String,
+        @Field("email") email: String,
+        @Field("password") password: String
+    ): RegisterResponse
+
+    @FormUrlEncoded
+    @POST("login")
+    suspend fun showLogin(
+        @Field("email") email: String,
+        @Field("password") password: String
+    ): LoginResponse
+
 //    @Multipart
 //    @POST("/v1/stories")
 //    fun createNewStory(
@@ -40,4 +42,4 @@
 //    suspend fun getMapsAllStories(
 //        @Header("Authorization") authorization: String?
 //    ): AllStoryResponse
-//}
+}

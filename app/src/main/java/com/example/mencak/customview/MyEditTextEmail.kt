@@ -4,7 +4,9 @@ import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
+import android.util.Patterns
 import androidx.appcompat.widget.AppCompatEditText
+import com.example.mencak.R
 
 
 class MyEditTextEmail : AppCompatEditText {
@@ -31,8 +33,8 @@ class MyEditTextEmail : AppCompatEditText {
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (s.toString().isNotEmpty()) {
-//                    if (!Patterns.EMAIL_ADDRESS.matcher(s.toString()).matches()) error =
-//                        resources.getString(R.string.error_email)
+                    if (!Patterns.EMAIL_ADDRESS.matcher(s.toString()).matches()) error =
+                        resources.getString(R.string.error_email)
                 }
             }
 
