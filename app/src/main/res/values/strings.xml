@@ -59,5 +59,9 @@
     <string name="title_profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="scan_your_food">Scan your food</string>
+    <string name="food_your_location">Food on your location</string>
+    <string name="see_all">See all</string>
+    <string name="populer_tag">Populer Tag</string>
 
 </resources>

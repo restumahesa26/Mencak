@@ -5,19 +5,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.home.ui.home.HomeFragment" >
 
-    <TextView
-        android:id="@+id/text_home"
+    <EditText
+        android:focusable = "false"
+        android:focusableInTouchMode="false"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:background="@drawable/search_border"
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:layout_marginRight="16dp"
+        android:inputType="textPersonName"
+        android:hint="Search"
+        app:layout_constraintEnd_toStartOf="@+id/iv_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ini_logo"
+        tools:src="@drawable/ini_logo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_scan_food"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+
+        <ImageView
+            android:id="@+id/logo_camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_camera_white_alt_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/scan_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/scan_your_food"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginRight="16dp"
+        android:id="@+id/food_your_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/food_your_location"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/see_all"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/see_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/see_all"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:drawableEnd="@drawable/ic_baseline_chevron_right_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcListFoodHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food_your_location"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_food_your_location_horizontal" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_create_post"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="14dp"
+        android:textSize="14sp"
+        android:padding="0dp"
+        android:text="Create Your Post"
+        android:background="@drawable/bg_button_red"
+        android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/rcListFoodHorizontal" />
+
+    <TextView
+        android:id="@+id/populer_tag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/populer_tag"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_create_post" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="12dp"
+        android:id="@+id/rcListPopulerTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/populer_tag"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_populer_tag" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
