@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.example.mencak.R
+import com.example.mencak.adapter.SectionProfileAdapter
 import com.example.mencak.databinding.FragmentHomeBinding
 import com.example.mencak.databinding.FragmentProfileBinding
 import com.example.mencak.ui.home.ui.home.HomeViewModel
@@ -24,17 +25,19 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val profileViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val view = binding.root
+        return view
+    }
 
-        val textView: TextView = binding.textProfile
-        profileViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        val sectionPagerAdapter = SectionProfileAdapter(
+            childFragmentManager
+        )
+        binding.viewPager.adapter = sectionPagerAdapter
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
 
     override fun onDestroyView() {

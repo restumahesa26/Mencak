@@ -10,7 +10,7 @@
     <string name="link_login"><u>Login</u></string>
     <string name="message_login_page">Enter your data first</string>
     <string name="title_login_page">Are you ready to upgrade your skills?</string>
-    <string name="name">Name</string>
+    <string name="name">Full Name</string>
     <string name="message_main_page">Happy Learning in Dicoding.</string>
     <string name="copyright">© 2021 Dicoding</string>
     <string name="logout">Logout</string>

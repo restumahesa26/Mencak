@@ -133,7 +133,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_create_post" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:id="@+id/rcListPopulerTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
