@@ -5,19 +5,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="42dp"
     tools:context=".ui.home.ui.scan.ScanFragment" >
 
+    <ImageView
+        android:id="@+id/ivProfil"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_picture_empty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:text="MencaK"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="#000"
         android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find your food"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <ImageView
+        android:id="@+id/previewImageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+        app:srcCompat="@drawable/ic_place_holder" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/captureButton"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/bg_scan_food"
+            android:text="Capture Image"
+            android:textAllCaps="false"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/food_your_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="or"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/selectGalleryButton"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_scan_food"
+            android:text="Select from Gallery"
+            android:textAllCaps="false"
+            android:textColor="#000" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
