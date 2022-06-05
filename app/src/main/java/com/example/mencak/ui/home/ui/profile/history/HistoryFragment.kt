@@ -5,12 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mencak.R
-import com.example.mencak.adapter.FoodYourLocationAdapter
+import com.example.mencak.adapter.HistoryFoodAdapter
+import com.example.mencak.adapter.ListFoodAdapter
 import com.example.mencak.databinding.FragmentHistoryBinding
-import com.example.mencak.databinding.FragmentHomeBinding
 import com.example.mencak.model.FoodModel
 
 class HistoryFragment : Fragment() {
@@ -41,19 +41,25 @@ class HistoryFragment : Fragment() {
         var adapter = HistoryFoodAdapter(listFood)
         rcHistoryFood.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rcHistoryFood.adapter = adapter
+
+        adapter.setOnItemClickCallback(object: HistoryFoodAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: FoodModel) {
+                Toast.makeText(requireContext(), "Kamu Memilih " + data.name, Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     fun initDataDummy() {
         listFood = ArrayList()
-        listFood.add(FoodModel("Ketoprak", ""))
-        listFood.add(FoodModel("Sate Padang", ""))
-        listFood.add(FoodModel("Sate Madura", ""))
-        listFood.add(FoodModel("Bakso", ""))
-        listFood.add(FoodModel("Mie Ayam", ""))
-        listFood.add(FoodModel("Ayam Geprek", ""))
-        listFood.add(FoodModel("Ikan Bakar", ""))
-        listFood.add(FoodModel("Gado-Gado", ""))
-        listFood.add(FoodModel("Bubur Ayam", ""))
+        listFood.add(FoodModel("Ketoprak", "", 0f, ""))
+        listFood.add(FoodModel("Sate Padang", "", 0f, ""))
+        listFood.add(FoodModel("Sate Madura", "", 0f, ""))
+        listFood.add(FoodModel("Bakso", "", 0f, ""))
+        listFood.add(FoodModel("Mie Ayam", "", 0f, ""))
+        listFood.add(FoodModel("Ayam Geprek", "", 0f, ""))
+        listFood.add(FoodModel("Ikan Bakar", "", 0f, ""))
+        listFood.add(FoodModel("Gado-Gado", "", 0f, ""))
+        listFood.add(FoodModel("Bubur Ayam", "", 0f, ""))
     }
 
     override fun onDestroyView() {

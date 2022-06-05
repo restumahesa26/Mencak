@@ -31,7 +31,7 @@ class FoodYourLocationAdapter(private val listFood: ArrayList<FoodModel>) : Recy
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, image) = listFood[position]
+        val (name, image, rating, city) = listFood[position]
         holder.nameFood?.text = name.toString()
 
         holder.itemView.setOnClickListener {

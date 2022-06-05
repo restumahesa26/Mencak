@@ -133,12 +133,13 @@
             app:passwordToggleEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signupButton"
         android:layout_width="98dp"
         android:layout_height="61dp"
         android:layout_marginTop="8dp"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/bg_scan_food"
+        android:textAllCaps="false"
         android:text="@string/signup"
         app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
         app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"

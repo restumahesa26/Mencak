@@ -62,6 +62,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="16dp">
 
+        <TextView
+            android:id="@+id/tvPredict"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="12dp"
+            android:text="MencaK"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/captureButton"
             android:layout_width="130dp"
