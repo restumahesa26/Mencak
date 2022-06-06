@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.createpost.CreatePostActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Title"
+        android:textColor="#000"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:layout_marginTop="6dp"
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="Title"
+        android:padding="12dp"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:background="@drawable/search_border" />
+
+    <TextView
+        android:hint="Tag"
+        android:layout_marginTop="8dp"
+        android:id="@+id/tvTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Tag"
+        android:textColor="#000"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:layout_marginTop="6dp"
+        android:id="@+id/etTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="#"
+        android:padding="12dp"
+        android:background="@drawable/search_border" />
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:id="@+id/tvImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Image"
+        android:textColor="#000"
+        android:textSize="18sp"/>
+
+    <ImageView
+        android:id="@+id/previewImageView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:srcCompat="@drawable/ic_place_holder" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:id="@+id/tvButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Add Image From"
+        android:textColor="#000"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/captureButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/bg_scan_food"
+            android:text="Camera"
+            android:textAllCaps="false"
+            android:textColor="#000" />
+
+        <TextView
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:id="@+id/food_your_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="or"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/selectGalleryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_scan_food"
+            android:text="Gallery"
+            android:textAllCaps="false"
+            android:textColor="#000" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_create_post"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp"
+        android:padding="0dp"
+        android:text="Send Post"
+        android:background="@drawable/bg_button_red"
+        android:textColor="#fff"/>
+</LinearLayout>

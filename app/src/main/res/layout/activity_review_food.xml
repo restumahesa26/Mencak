@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.reviewfood.ReviewFoodActivity">
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:srcCompat="@drawable/image_food"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Rating"
+        android:textColor="#000"
+        android:textSize="18sp"/>
+
+    <RatingBar
+        android:stepSize="1"
+        android:layout_marginTop="4dp"
+        android:id="@+id/ratingBarDetailFood"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:progressTint="#FFCC01"/>
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Price"
+        android:textColor="#000"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:id="@+id/etPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:inputType="number"
+        android:padding="12dp"
+        android:gravity="start|top"
+        android:background="@drawable/search_border" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="16dp"
+        android:id="@+id/btnReviewFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_scan_food"
+        android:text="Review Food"
+        android:textAllCaps="false"
+        android:textColor="#000"/>
+
+</LinearLayout>

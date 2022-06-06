@@ -22,7 +22,7 @@
         android:text="Posted from Name"
         android:layout_marginLeft="8dp"
         android:textColor="#000"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/ivPostUser"
         app:layout_constraintStart_toEndOf="@+id/ivPostUser"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,8 +39,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivPostUser" />
 
+    <TextView
+        android:id="@+id/tvTagPost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="#tag"
+        android:textColor="#000"
+        android:layout_marginLeft="16dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tvTitlePost"
+        app:layout_constraintTop_toTopOf="@+id/tvTitlePost" />
+
     <ImageView
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:id="@+id/ivPostImage"
         android:layout_width="0dp"
         android:layout_height="240dp"
@@ -51,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitlePost" />
 
     <ImageView
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="2dp"
         android:id="@+id/logo_comment"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -60,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ivPostImage" />
 
     <TextView
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginLeft="4dp"
         android:id="@+id/tvComment"
         android:layout_width="0dp"

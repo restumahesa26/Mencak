@@ -1,5 +1,6 @@
 package com.example.mencak.ui.home.ui.profile.history
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.example.mencak.adapter.HistoryFoodAdapter
 import com.example.mencak.adapter.ListFoodAdapter
 import com.example.mencak.databinding.FragmentHistoryBinding
 import com.example.mencak.model.FoodModel
+import com.example.mencak.ui.reviewfood.ReviewFoodActivity
 
 class HistoryFragment : Fragment() {
 
@@ -44,7 +46,8 @@ class HistoryFragment : Fragment() {
 
         adapter.setOnItemClickCallback(object: HistoryFoodAdapter.OnItemClickCallback {
             override fun onItemClicked(data: FoodModel) {
-                Toast.makeText(requireContext(), "Kamu Memilih " + data.name, Toast.LENGTH_SHORT).show()
+                val intent = Intent(requireContext(), ReviewFoodActivity::class.java)
+                startActivity(intent)
             }
         })
     }

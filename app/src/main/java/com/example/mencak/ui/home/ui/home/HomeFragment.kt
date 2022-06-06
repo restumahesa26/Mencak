@@ -7,13 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mencak.R
 import com.example.mencak.adapter.FoodYourLocationAdapter
 import com.example.mencak.adapter.PopulerTagAdapter
 import com.example.mencak.adapter.PostAdapter
@@ -21,8 +16,9 @@ import com.example.mencak.databinding.FragmentHomeBinding
 import com.example.mencak.model.FoodModel
 import com.example.mencak.model.PostModel
 import com.example.mencak.model.TagModel
-import com.example.mencak.ui.login.LoginActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.mencak.ui.createpost.CreatePostActivity
+import com.example.mencak.ui.detail.DetailActivity
+import com.example.mencak.ui.detailpost.DetailPostActivity
 
 class HomeFragment : Fragment() {
 
@@ -67,7 +63,9 @@ class HomeFragment : Fragment() {
 
         adapter.setOnItemClickCallback(object : FoodYourLocationAdapter.OnItemClickCallback {
             override fun onItemClicked(data: FoodModel) {
-                showSelectedFoodYourLocation(data)
+                val intent = Intent(requireContext(), DetailActivity::class.java)
+                intent.putExtra("DATA", data)
+                startActivity(intent)
             }
         })
 
@@ -87,7 +85,9 @@ class HomeFragment : Fragment() {
 
         adapter3.setOnItemClickCallback(object : PostAdapter.OnItemClickCallback {
             override fun onItemClicked(data: PostModel) {
-                showSelectedPost(data)
+                val intent = Intent(requireContext(), DetailPostActivity::class.java)
+                intent.putExtra("DATA", data)
+                startActivity(intent)
             }
         })
 
@@ -96,30 +96,31 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnCreatePost.setOnClickListener {
-            Toast.makeText(requireContext(), "Kamu Mengklik Tombol Create Post", Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), CreatePostActivity::class.java)
+            startActivity(intent)
         }
     }
 
     fun initDataDummy() {
         listFood = ArrayList()
-        listFood.add(FoodModel("Ketoprak", "", 0f, ""))
-        listFood.add(FoodModel("Sate Padang", "", 0f, ""))
-        listFood.add(FoodModel("Sate Madura", "", 0f, ""))
-        listFood.add(FoodModel("Bakso", "", 0f, ""))
-        listFood.add(FoodModel("Mie Ayam", "", 0f, ""))
-        listFood.add(FoodModel("Ayam Geprek", "", 0f, ""))
-        listFood.add(FoodModel("Ikan Bakar", "", 0f, ""))
-        listFood.add(FoodModel("Gado-Gado", "", 0f, ""))
-        listFood.add(FoodModel("Bubur Ayam", "", 0f, ""))
-        listFood.add(FoodModel("Ketoprak", "", 0f, ""))
-        listFood.add(FoodModel("Sate Padang", "", 0f, ""))
-        listFood.add(FoodModel("Sate Madura", "", 0f, ""))
-        listFood.add(FoodModel("Bakso", "", 0f, ""))
-        listFood.add(FoodModel("Mie Ayam", "", 0f, ""))
-        listFood.add(FoodModel("Ayam Geprek", "", 0f, ""))
-        listFood.add(FoodModel("Ikan Bakar", "", 0f, ""))
-        listFood.add(FoodModel("Gado-Gado", "", 0f, ""))
-        listFood.add(FoodModel("Bubur Ayam", "", 0f, ""))
+        listFood.add(FoodModel("Ketoprak", "", 4f, "Jakarta", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Sate Padang", "", 3.5f, "Padang", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Sate Madura", "", 2.3f, "Madura", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Bakso", "", 3.4f, "Solo", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Mie Ayam", "", 1.5f, "Solo", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Ayam Geprek", "", 4.5f, "Indonesia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Ikan Bakar", "", 5f, "Indonesia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Gado-Gado", "", 4.2f, "Jawa Barat", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Bubur Ayam", "", 4.7f, "Jakarta", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Ketoprak", "", 4f, "Jakarta", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Sate Padang", "", 3.5f, "Padang", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Sate Madura", "", 2.3f, "Madura", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Bakso", "", 3.4f, "Solo", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Mie Ayam", "", 1.5f, "Solo", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Ayam Geprek", "", 4.5f, "Indonesia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Ikan Bakar", "", 5f, "Indonesia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Gado-Gado", "", 4.2f, "Jawa Barat", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+        listFood.add(FoodModel("Bubur Ayam", "", 4.7f, "Jakarta", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
     }
 
     fun initDataDummy2() {
@@ -146,24 +147,24 @@ class HomeFragment : Fragment() {
 
     fun initDataDummy3() {
         listPost = ArrayList()
-        listPost.add(PostModel("Mufti Restu Mahesa", "", "Ketoprak Enak", "", 100))
-        listPost.add(PostModel("Adde Nanda C. Putra", "", "Batagor Enak", "", 30))
-        listPost.add(PostModel("M. Daffa Alfajri", "", "Batagor Enak", "", 200))
-        listPost.add(PostModel("Khoirus Fauzi", "", "Bakso Enak", "", 50))
-        listPost.add(PostModel("Maria Misela", "", "Ikan Bakar Enak", "", 80))
-        listPost.add(PostModel("Aditya", "", "Gado-gado Enak", "", 25))
-        listPost.add(PostModel("Andrei Jonior", "", "Ayam Penyet Enak", "", 10))
-        listPost.add(PostModel("Rolin Sanjaya", "", "Lumpia Goreng Enak", "", 65))
-        listPost.add(PostModel("Rizki Gusmanto", "", "Gorengan Enak", "", 35))
-        listPost.add(PostModel("Mufti Restu Mahesa", "", "Ketoprak Enak", "", 100))
-        listPost.add(PostModel("Adde Nanda C. Putra", "", "Batagor Enak", "", 30))
-        listPost.add(PostModel("M. Daffa Alfajri", "", "Batagor Enak", "", 200))
-        listPost.add(PostModel("Khoirus Fauzi", "", "Bakso Enak", "", 50))
-        listPost.add(PostModel("Maria Misela", "", "Ikan Bakar Enak", "", 80))
-        listPost.add(PostModel("Aditya", "", "Gado-gado Enak", "", 25))
-        listPost.add(PostModel("Andrei Jonior", "", "Ayam Penyet Enak", "", 10))
-        listPost.add(PostModel("Rolin Sanjaya", "", "Lumpia Goreng Enak", "", 65))
-        listPost.add(PostModel("Rizki Gusmanto", "", "Gorengan Enak", "", 35))
+        listPost.add(PostModel("Mufti Restu Mahesa", "", "Ketoprak Enak", "", 100, "ketoprak"))
+        listPost.add(PostModel("Adde Nanda C. Putra", "", "Batagor Enak", "", 30, "batagor"))
+        listPost.add(PostModel("M. Daffa Alfajri", "", "Batagor Enak", "", 200, "batagor"))
+        listPost.add(PostModel("Khoirus Fauzi", "", "Bakso Enak", "", 50, "bakso"))
+        listPost.add(PostModel("Maria Misela", "", "Ikan Bakar Enak", "", 80, "ikanbakar"))
+        listPost.add(PostModel("Aditya", "", "Gado-gado Enak", "", 25, "gadogado"))
+        listPost.add(PostModel("Andrei Jonior", "", "Ayam Penyet Enak", "", 10, "ayampenyet"))
+        listPost.add(PostModel("Rolin Sanjaya", "", "Lumpia Goreng Enak", "", 65, "lumpia"))
+        listPost.add(PostModel("Rizki Gusmanto", "", "Gorengan Enak", "", 35, "gorengan"))
+        listPost.add(PostModel("Mufti Restu Mahesa", "", "Ketoprak Enak", "", 100, "ketoprak"))
+        listPost.add(PostModel("Adde Nanda C. Putra", "", "Batagor Enak", "", 30, "batagor"))
+        listPost.add(PostModel("M. Daffa Alfajri", "", "Batagor Enak", "", 200, "batagor"))
+        listPost.add(PostModel("Khoirus Fauzi", "", "Bakso Enak", "", 50, "bakso"))
+        listPost.add(PostModel("Maria Misela", "", "Ikan Bakar Enak", "", 80, "ikanbakar"))
+        listPost.add(PostModel("Aditya", "", "Gado-gado Enak", "", 25, "gadogado"))
+        listPost.add(PostModel("Andrei Jonior", "", "Ayam Penyet Enak", "", 10, "ayampenyet"))
+        listPost.add(PostModel("Rolin Sanjaya", "", "Lumpia Goreng Enak", "", 65, "lumpia"))
+        listPost.add(PostModel("Rizki Gusmanto", "", "Gorengan Enak", "", 35, "gorengan"))
     }
 
     private fun showSelectedFoodYourLocation(food: FoodModel) {

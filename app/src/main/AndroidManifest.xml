@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mencak" >
+    package="com.example.mencak">
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -16,7 +16,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Mencak" >
+        android:theme="@style/Theme.Mencak">
+        <activity
+            android:name=".ui.detailpost.DetailPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.reviewfood.ReviewFoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.createpost.CreatePostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="false"
@@ -29,7 +41,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

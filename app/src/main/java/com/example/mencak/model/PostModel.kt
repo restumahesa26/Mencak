@@ -9,5 +9,6 @@ data class PostModel(
     var profil: String,
     var title: String,
     var image: String,
-    var comment: Int
+    var comment: Int,
+    var tag: String
 ) : Parcelable

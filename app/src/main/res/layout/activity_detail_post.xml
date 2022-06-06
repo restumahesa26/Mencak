@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detailpost.DetailPostActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivPostUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_picture_empty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNamePost"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Posted from Name"
+            android:layout_marginLeft="8dp"
+            android:textColor="#000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivPostUser"
+            app:layout_constraintStart_toEndOf="@+id/ivPostUser"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitlePost"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Title Post"
+            android:textColor="#000"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPostUser" />
+
+        <TextView
+            android:id="@+id/tvTagPost"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="#tag"
+            android:textColor="#000"
+            android:layout_marginLeft="16dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/tvTitlePost"
+            app:layout_constraintTop_toTopOf="@+id/tvTitlePost" />
+
+        <ImageView
+            android:layout_marginTop="8dp"
+            android:id="@+id/ivPostImage"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_food"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitlePost" />
+
+        <ImageView
+            android:layout_marginTop="2dp"
+            android:id="@+id/logo_comment"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_comment_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPostImage" />
+
+        <TextView
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
+            android:id="@+id/tvComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="100 Comments"
+            android:textColor="#000"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/logo_comment"
+            app:layout_constraintTop_toBottomOf="@+id/ivPostImage" />
+
+        <TextView
+            android:id="@+id/tvYourComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Add your comment here"
+            android:layout_marginTop="12dp"
+            android:textColor="#000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_comment" />
+
+        <EditText
+            android:layout_marginTop="8dp"
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/search_border"
+            android:gravity="start|top"
+            android:textSize="16sp"
+            android:hint="Your Comment"
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvYourComment" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSendComment"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_button_red"
+            android:padding="0dp"
+            android:layout_marginTop="8dp"
+            android:text="Send Comment"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="16dp"
+            android:id="@+id/rcListPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSendComment"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_comment_post" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

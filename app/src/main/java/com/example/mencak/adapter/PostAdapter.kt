@@ -26,6 +26,7 @@ class PostAdapter(private val listPost: ArrayList<PostModel>) : RecyclerView.Ada
         var title: TextView = itemView.findViewById(R.id.tvTitlePost)
         var image: ImageView = itemView.findViewById(R.id.ivPostImage)
         var comment: TextView = itemView.findViewById(R.id.tvComment)
+        var tag: TextView = itemView.findViewById(R.id.tvTagPost)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -34,10 +35,11 @@ class PostAdapter(private val listPost: ArrayList<PostModel>) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, profil, title, image, comment) = listPost[position]
+        val (name, profil, title, image, comment, tag) = listPost[position]
         holder.name?.text = name
         holder.title?.text = title
         holder.comment?.text = "$comment comments"
+        holder.tag?.text = "#$tag"
 
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listPost[holder.adapterPosition])

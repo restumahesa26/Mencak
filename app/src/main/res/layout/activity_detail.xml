@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailActivity">
+
+    <LinearLayout
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivDetailFood"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ini_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_marginLeft="16dp"
+                android:id="@+id/tvDetailFoodName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Food Name"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivDetailFood"
+                app:layout_constraintTop_toTopOf="@+id/ivDetailFood" />
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:id="@+id/tvDetailFoodRating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Rating"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/tvDetailFoodName"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetailFoodName" />
+
+            <RatingBar
+                android:layout_marginTop="4dp"
+                android:id="@+id/ratingBarDetailFood"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:progressTint="#FFCC01"
+                android:rating="3.5"
+                app:layout_constraintStart_toStartOf="@+id/tvDetailFoodRating"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetailFoodRating" />
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:id="@+id/tvDetailFoodPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Price"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/ratingBarDetailFood"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBarDetailFood" />
+
+            <TextView
+                android:layout_marginTop="4dp"
+                android:id="@+id/tvDetailFoodPriceValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Rp. 15k"
+                android:textColor="#000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/tvDetailFoodPrice"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetailFoodPrice" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_marginTop="12dp"
+            android:id="@+id/tvDetailFoodCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="City"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/tvDetailFoodCityValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="City name"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_marginTop="12dp"
+            android:id="@+id/tvDetailFoodDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Description Food"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/tvDetailFoodDescriptionValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="loremjhskldfjkls;dfjkszl;djfkzlsdjfzksdfadasdddddddddddddddddddddsad"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_marginTop="12dp"
+            android:id="@+id/tvDetailFoodRelated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Related Food"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcListFoodHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/food_your_location"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_food_your_location_horizontal" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_create_post"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textAllCaps="false"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:padding="0dp"
+            android:text="Create Your Post"
+            android:background="@drawable/bg_button_red"
+            android:textColor="#fff"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="16dp"
+            android:id="@+id/rcListPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rcListPopulerTag"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_post" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

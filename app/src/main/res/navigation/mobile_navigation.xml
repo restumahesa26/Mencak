@@ -9,7 +9,8 @@
         android:id="@+id/navigation_home"
         android:name="com.example.mencak.ui.home.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_scan"
@@ -21,7 +22,8 @@
         android:id="@+id/navigation_food"
         android:name="com.example.mencak.ui.home.ui.food.FoodFragment"
         android:label="@string/title_food"
-        tools:layout="@layout/fragment_food" />
+        tools:layout="@layout/fragment_food" >
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
