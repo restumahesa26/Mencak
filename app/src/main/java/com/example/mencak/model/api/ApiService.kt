@@ -2,6 +2,7 @@ package com.example.mencak.model.api
 
 import com.example.mencak.model.response.MencakResponse.LoginResponse
 import com.example.mencak.model.response.MencakResponse.RegisterResponse
+import com.example.mencak.model.response.MencakResponse.FoodResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -22,6 +23,15 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String
     ): LoginResponse
+
+    @GET("food")
+    fun getFood(): Call<ArrayList<FoodResponse>>
+
+    @GET("food/{id}")
+    fun getDetailFood(
+        @Path("id") id: String
+    ): Call<FoodResponse>
+
 
 //    @Multipart
 //    @POST("/v1/stories")

@@ -1,6 +1,8 @@
 package com.example.mencak.model.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 class MencakResponse {
     data class RegisterResponse(
@@ -33,6 +35,27 @@ class MencakResponse {
         @field:SerializedName("token")
         val token: String
     )
+
+    @Parcelize
+    data class FoodResponse(
+        @field:SerializedName("id")
+        var id: String,
+
+        @field:SerializedName("tag")
+        var tag: String,
+
+        @field:SerializedName("hargaTerendah")
+        var hargaTerendah: String,
+
+        @field:SerializedName("deskripsiMakanan")
+        var deskripsiMakanan: String,
+
+        @field:SerializedName("namaMakanan")
+        var namaMakanan: String,
+
+        @field:SerializedName("fotoMakanan")
+        var fotoMakanan: String
+    ) : Parcelable
 
 //    data class NewStoryResponse(
 //        @field:SerializedName("error")

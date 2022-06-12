@@ -7,15 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mencak.adapter.FoodYourLocationAdapter
 import com.example.mencak.adapter.PopulerTagAdapter
 import com.example.mencak.adapter.PostAdapter
+import com.example.mencak.adapter.RelatedFoodAdapter
 import com.example.mencak.databinding.FragmentHomeBinding
 import com.example.mencak.model.FoodModel
 import com.example.mencak.model.PostModel
 import com.example.mencak.model.TagModel
+import com.example.mencak.model.response.MencakResponse
 import com.example.mencak.ui.createpost.CreatePostActivity
 import com.example.mencak.ui.detail.DetailActivity
 import com.example.mencak.ui.detailpost.DetailPostActivity
@@ -57,17 +60,25 @@ class HomeFragment : Fragment() {
         initDataDummy2()
         initDataDummy3()
 
-        var adapter = FoodYourLocationAdapter(listFood)
-        rcFoodLocation.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        rcFoodLocation.adapter = adapter
+        val homeViewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.NewInstanceFactory()
+        )[HomeViewModel::class.java]
+        homeViewModel.listFood.observe(viewLifecycleOwner) {
+            showFood(it)
+        }
 
-        adapter.setOnItemClickCallback(object : FoodYourLocationAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: FoodModel) {
-                val intent = Intent(requireContext(), DetailActivity::class.java)
-                intent.putExtra("DATA", data)
-                startActivity(intent)
-            }
-        })
+        var adapter = FoodYourLocationAdapter(listFood)
+//        rcFoodLocation.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//        rcFoodLocation.adapter = adapter
+//
+//        adapter.setOnItemClickCallback(object : FoodYourLocationAdapter.OnItemClickCallback {
+//            override fun onItemClicked(data: FoodModel) {
+//                val intent = Intent(requireContext(), DetailActivity::class.java)
+//                intent.putExtra("DATA", data)
+//                startActivity(intent)
+//            }
+//        })
 
         var adapter2 = PopulerTagAdapter(listTag)
         rcPopulerTag.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -182,5 +193,19 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun showFood(user: ArrayList<MencakResponse.FoodResponse>) {
+        binding.rcListFoodHorizontal.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val listGithubAccAdapter = RelatedFoodAdapter(user)
+        binding.rcListFoodHorizontal.adapter = listGithubAccAdapter
+        listGithubAccAdapter.setOnItemClickCallback(object :
+            RelatedFoodAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: MencakResponse.FoodResponse) {
+                val detailAcc = Intent(requireContext(), DetailActivity::class.java)
+                detailAcc.putExtra("ID", data.id)
+                startActivity(detailAcc)
+            }
+        })
     }
 }

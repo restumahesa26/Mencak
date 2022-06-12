@@ -1,7 +1,6 @@
 package com.example.mencak.ui.home.ui.scan
 
 import android.Manifest
-import android.app.Activity.RESULT_OK
 import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
@@ -9,17 +8,13 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
-import android.media.ImageReader.newInstance
-import android.media.ThumbnailUtils
 import android.net.Uri
-import android.net.sip.SipManager.newInstance
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -27,8 +22,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.mencak.databinding.FragmentHistoryBinding
 import com.example.mencak.databinding.FragmentScanBinding
 import com.example.mencak.ml.FoodModelML
 import org.tensorflow.lite.DataType
@@ -71,8 +64,7 @@ class ScanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentScanBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     private fun classifyImage(bitmap: Bitmap) {
@@ -90,13 +82,13 @@ class ScanFragment : Fragment() {
         val intValues = IntArray(imageSize * imageSize)
         resize.getPixels(intValues, 0, resize.width, 0, 0, resize.width, resize.height)
 
-        var pixel: Int = 0
+        var pixel = 0
         for (i in 0 until imageSize) {
             for (j in 0 until imageSize) {
                 val value = intValues[pixel++]
-                byteBuffer.putFloat(((value shr 16) and 0xFF) * (1f / 255))
-                byteBuffer.putFloat(((value shr 8) and 0xFF) * (1f / 255))
-                byteBuffer.putFloat((value and 0xFF) * (1f / 255))
+                byteBuffer.putFloat(((value shr 16) and 0xFF) * (1f / 1))
+                byteBuffer.putFloat(((value shr 8) and 0xFF) * (1f / 1))
+                byteBuffer.putFloat((value and 0xFF) * (1f / 1))
             }
         }
 
@@ -105,9 +97,9 @@ class ScanFragment : Fragment() {
         val outputs = foodModel.process(inputFeature0)
         val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-        var confidence = outputFeature0.floatArray
+        val confidence = outputFeature0.floatArray
         var maxPos = 0
-        var maxConfidence: Float = 0f
+        var maxConfidence = 0f
         for (i in 0 until confidence.size) {
             if (confidence[i] > maxConfidence) {
                 maxConfidence = confidence[i]

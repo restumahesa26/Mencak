@@ -6,14 +6,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.mencak.R
 import com.example.mencak.model.FoodModel
+import com.example.mencak.model.response.MencakResponse
 
-class RelatedFoodAdapter(private val listFood: ArrayList<FoodModel>) : RecyclerView.Adapter<RelatedFoodAdapter.ListViewHolder>() {
+class RelatedFoodAdapter(private val listFood: ArrayList<MencakResponse.FoodResponse>) : RecyclerView.Adapter<RelatedFoodAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     interface OnItemClickCallback {
-        fun onItemClicked(data: FoodModel)
+        fun onItemClicked(data: MencakResponse.FoodResponse)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -31,12 +33,17 @@ class RelatedFoodAdapter(private val listFood: ArrayList<FoodModel>) : RecyclerV
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, image, rating, city) = listFood[position]
-        holder.nameFood?.text = name.toString()
-
-        holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])
-        }
+//        val (name, image, rating, city) = listFood[position]
+//        holder.nameFood?.text = name.toString()
+//
+//        holder.itemView.setOnClickListener {
+//            onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])
+//        }
+        holder.nameFood.text = listFood[position].namaMakanan
+        Glide.with(holder.image.context)
+            .load(listFood[position].fotoMakanan)
+            .into(holder.image)
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listFood[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int = listFood.size

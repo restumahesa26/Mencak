@@ -99,14 +99,14 @@
             android:textSize="18sp"/>
 
         <TextView
-            android:layout_marginTop="8dp"
             android:id="@+id/tvDetailFoodCityValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_medium"
             android:text="City name"
             android:textColor="#000"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <TextView
             android:layout_marginTop="12dp"

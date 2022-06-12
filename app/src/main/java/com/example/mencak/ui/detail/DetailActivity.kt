@@ -4,17 +4,24 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.mencak.adapter.PostAdapter
 import com.example.mencak.adapter.RelatedFoodAdapter
 import com.example.mencak.databinding.ActivityDetailBinding
 import com.example.mencak.model.FoodModel
 import com.example.mencak.model.PostModel
+import com.example.mencak.model.api.ApiConfig
+import com.example.mencak.model.response.MencakResponse
 import com.example.mencak.ui.createpost.CreatePostActivity
 import com.example.mencak.ui.detailpost.DetailPostActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DetailActivity : AppCompatActivity() {
 
@@ -30,7 +37,10 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getSupportActionBar()?.hide()
+        val detailId = intent.getStringExtra("ID")
+        detailFood(detailId.toString())
+
+        supportActionBar?.hide()
         setupView()
 
         rcRelatedFood = binding.rcListFoodHorizontal
@@ -42,18 +52,18 @@ class DetailActivity : AppCompatActivity() {
         initDataDummy()
         initDataDummy2()
 
-        var adapter = RelatedFoodAdapter(listFood)
-        rcRelatedFood.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rcRelatedFood.adapter = adapter
-
-        adapter.setOnItemClickCallback(object : RelatedFoodAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: FoodModel) {
-                val intent = Intent(this@DetailActivity, DetailActivity::class.java)
-                intent.putExtra("DATA", data)
-                startActivity(intent)
-                finish()
-            }
-        })
+//        var adapter = RelatedFoodAdapter(listFood)
+//        rcRelatedFood.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+//        rcRelatedFood.adapter = adapter
+//
+//        adapter.setOnItemClickCallback(object : RelatedFoodAdapter.OnItemClickCallback {
+//            override fun onItemClicked(data: FoodModel) {
+//                val intent = Intent(this@DetailActivity, DetailActivity::class.java)
+//                intent.putExtra("DATA", data)
+//                startActivity(intent)
+//                finish()
+//            }
+//        })
 
         var adapter2 = PostAdapter(listPost)
         rcPost.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -67,12 +77,12 @@ class DetailActivity : AppCompatActivity() {
             }
         })
 
-        val data = intent.getParcelableExtra<FoodModel>("DATA")
+//        val data = intent.getParcelableExtra<FoodModel>("DATA")
 
-        binding.tvDetailFoodName.text = data?.name.toString()
-        binding.tvDetailFoodCityValue.text = data?.city.toString()
-        binding.tvDetailFoodDescriptionValue.text = data?.description.toString()
-        binding.ratingBarDetailFood.rating = data?.rating!!.toFloat()
+//        binding.tvDetailFoodName.text = data?.name.toString()
+//        binding.tvDetailFoodCityValue.text = data?.city.toString()
+//        binding.tvDetailFoodDescriptionValue.text = data?.description.toString()
+//        binding.ratingBarDetailFood.rating = data?.rating!!.toFloat()
 
         binding.btnCreatePost.setOnClickListener {
             val intent = Intent(this@DetailActivity, CreatePostActivity::class.java)
@@ -134,5 +144,29 @@ class DetailActivity : AppCompatActivity() {
         listPost.add(PostModel("Andrei Jonior", "", "Ayam Penyet Enak", "", 10, "ayampenyet"))
         listPost.add(PostModel("Rolin Sanjaya", "", "Lumpia Goreng Enak", "", 65, "lumpia"))
         listPost.add(PostModel("Rizki Gusmanto", "", "Gorengan Enak", "", 35, "gorengan"))
+    }
+
+    private fun detailFood(id: String) {
+        val client = ApiConfig.getApiService().getDetailFood(id)
+        client.enqueue(object : Callback<MencakResponse.FoodResponse> {
+            override fun onResponse(
+                call: Call<MencakResponse.FoodResponse>,
+                response: Response<MencakResponse.FoodResponse>
+            ) {
+                if (response.isSuccessful) {
+                    binding.tvDetailFoodName.text = response.body()?.namaMakanan
+                    Glide.with(binding.ivDetailFood.context)
+                        .load(response.body()?.fotoMakanan)
+                        .into(binding.ivDetailFood)
+                    binding.tvDetailFoodPriceValue.text = response.body()?.hargaTerendah
+                    binding.tvDetailFoodCityValue.text = response.body()?.tag
+                    binding.tvDetailFoodDescriptionValue.text = response.body()?.deskripsiMakanan
+                }
+            }
+
+            override fun onFailure(call: Call<MencakResponse.FoodResponse>, t: Throwable) {
+                Log.d("DetailAccActivity", "onFailure: ${t.message.toString()}")
+            }
+        })
     }
 }
