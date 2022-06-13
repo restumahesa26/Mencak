@@ -79,8 +79,5 @@ Google Cloud Platform Subscription : **$200**
 ### Dataset:
 - https://drive.google.com/drive/folders/1S6SKK3th0OGKFRIE0xgj6hSqvbLjfJLN?usp=sharing
 
-### Paper / Journals / articles:
-- [Food Image Classification with Convolutional Neural Networks](https://cs230.stanford.edu/projects_fall_2019/reports/26233496.pdf)
-
 ### Design Apps :
 [Design](https://www.figma.com/file/jlg0mPLIWr7AnjQLbTlDD5/Desain-MencaK?node-id=0%3A1)
