@@ -74,7 +74,7 @@ Based on Rencana Strategis (Renstra) Kementerian Kesehatan 2020-2024, one of the
 Google Cloud Platform Subscription : **$200**
 
 ### Dataset:
-- [Patient Treatment Classification](https://www.kaggle.com/saurabhshahane/patient-treatment-classification)
+- https://drive.google.com/drive/folders/1S6SKK3th0OGKFRIE0xgj6hSqvbLjfJLN?usp=sharing
 
 ### Paper / Journals / articles:
 - [Development of a Mobile Personal Health Record Application Designed for Emergency Care in Korea; Integrated Information from Multicenter Electronic Medical Records](https://www.mdpi.com/2076-3417/10/19/6711/pdf)
