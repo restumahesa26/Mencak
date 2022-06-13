@@ -45,10 +45,14 @@ our team will create an application called Mencak (Searching for Culinary). The 
 
 ### Cloud Computing
 1. Create a project on Google Cloud Platform
-2. Set default region as asia-southeast2(Jakarta)
-    > go to gcp console and write this command : $gcloud config set compute/region asia-southeast2
-3. Create a project on Firebase
-4. Create storage with records and profile folders
+2. Create a API for authentication on Google Cloud Identity
+   -> With 2 Sign-in Providers:
+        - Email/Password
+        - Google
+3. Create a project on Firebase for Android
+   -> Get google-services.json to integrated with Android Studio
+4. Create a firestore for the database with collection food, user, etc.
+5. Create storage with records and profile folders
     - Cloud Storage Browser page
     - Create bucket
     - Name your bucket : "-----"
@@ -56,9 +60,8 @@ our team will create an application called Mencak (Searching for Culinary). The 
     - Choose where to store your data = asia-southeast2
     - Leave the default setting
     - Create
-5. Create a firestore for the database with collection note, patient, record, staff
-6. Input machine learning model in Firebase
-
+6. Create Rest Api with cloud functions
+   -> Get Functions Url and connect to database 
 ## Technology used
 
 - [Coroutine Flow](https://developer.android.com/kotlin/flow)
