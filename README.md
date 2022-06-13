@@ -80,7 +80,7 @@ Google Cloud Platform Subscription : **$200**
 - https://drive.google.com/drive/folders/1S6SKK3th0OGKFRIE0xgj6hSqvbLjfJLN?usp=sharing
 
 ### Paper / Journals / articles:
-- [Development of a Mobile Personal Health Record Application Designed for Emergency Care in Korea; Integrated Information from Multicenter Electronic Medical Records](https://www.mdpi.com/2076-3417/10/19/6711/pdf)
+- [Food Image Classification with Convolutional Neural Networks](https://cs230.stanford.edu/projects_fall_2019/reports/26233496.pdf)
 
 ### Design Apps :
 [Design](https://www.figma.com/file/jlg0mPLIWr7AnjQLbTlDD5/Desain-MencaK?node-id=0%3A1)
