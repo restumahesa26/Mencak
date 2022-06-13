@@ -20,7 +20,7 @@ Capstone for Bangkit 2021
 5. Khoirus Fauzi Rahmadhani (C2004G0236) - Institut Teknologi Sepuluh Nopember
 6. Muhammad Aditya Muharram (C2322F2825) - Universitas Syiah Kuala
 
-## Theme : Food
+## Theme : Tourism, Creative, and Digital Economy
 ### Title of Project : MencaK ( Mencari Kuliner )
 
 ### Summary of Project
@@ -28,11 +28,12 @@ Based on Rencana Strategis (Renstra) Kementerian Kesehatan 2020-2024, one of the
 
 ## Steps to replicate this project
 ### Machine Learning
-1. Dataset ingestion (from google images)
+1. Dataset ingestion (from Kaggle)
 2. Feature exploration
-3. Using transfer learning architecture DenseNet201 to reduce parameter inside
-4. FIne tuning on CNN layer
-5. Predict 15 foods from 5 famous province on Indonesia such as Jakarta, Bali, Central Java, West Java, and East Java
+3. Preprocessing (binary encoding, dividing data, check numbers of data, and scaling the data to prepare for the ML training)
+4. Define deep learning model using TensorFlow (use 2 dense layers)
+5. Hyperparameter tuning with the help of GridSearchCV from scikit-learn library and train the model
+6. Save and load model to evaluate model performance
 
 ### Mobile Development
 1. Design UI layout (optional: Figma)
