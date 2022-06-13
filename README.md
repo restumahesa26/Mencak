@@ -28,12 +28,11 @@ Based on Rencana Strategis (Renstra) Kementerian Kesehatan 2020-2024, one of the
 
 ## Steps to replicate this project
 ### Machine Learning
-1. Dataset ingestion (from Kaggle)
+1. Dataset ingestion (from google images)
 2. Feature exploration
-3. Preprocessing (binary encoding, dividing data, check numbers of data, and scaling the data to prepare for the ML training)
-4. Define deep learning model using TensorFlow (use 2 dense layers)
-5. Hyperparameter tuning with the help of GridSearchCV from scikit-learn library and train the model
-6. Save and load model to evaluate model performance
+3. Using transfer learning architecture DenseNet201 to reduce parameter inside
+4. FIne tuning on CNN layer
+5. Predict 15 foods from 5 famous province on Indonesia such as Jakarta, Bali, Central Java, West Java, and East Java
 
 ### Mobile Development
 1. Design UI layout (optional: Figma)
