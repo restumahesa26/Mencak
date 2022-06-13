@@ -28,11 +28,11 @@ our team will create an application called Mencak (Searching for Culinary). The 
 
 ## Steps to replicate this project
 ### Machine Learning
-1. Dataset ingestion (from Kaggle)
+1. Dataset ingestion (from google images)
 2. Feature exploration
-3. Preprocessing (binary encoding, dividing data, check numbers of data, and scaling the data to prepare for the ML training)
-4. Define deep learning model using TensorFlow (use 2 dense layers)
-5. Hyperparameter tuning with the help of GridSearchCV from scikit-learn library and train the model
+3. Using transfer learning DenseNet201
+4. Reduce Prameter and tuning the layer selected
+5. Test Prediction
 6. Save and load model to evaluate model performance
 
 ### Mobile Development
