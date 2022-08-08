@@ -63,7 +63,7 @@
         app:startIconDrawable="@drawable/ic_baseline_email_24">
 
         <com.example.mencak.customview.MyEditTextEmail
-            android:id="@+id/emailEditText"
+            android:id="@+id/emailEditTextProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -93,7 +93,7 @@
         app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
         <com.example.mencak.customview.MyEditTextPassword
-            android:id="@+id/passwordEditText"
+            android:id="@+id/passwordEditTextProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -111,6 +111,20 @@
         android:textAllCaps="false"
         android:textColor="#D61C4E"
         android:text="Update Profile"
+        app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/bg_button_red"
+        android:id="@+id/logoutButton"
+        android:layout_gravity="center"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:textAllCaps="false"
+        android:textColor="#FAC213"
+        android:text="Logout"
         app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
         app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
         app:layout_constraintTop_toBottomOf="@+id/loginTextView" />

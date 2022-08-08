@@ -13,7 +13,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_food" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:layout_marginLeft="10dp"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:fontFamily="@font/roboto_medium"
-        android:text="Ketoprak"
+        tools:text="Ketoprak"
         android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/ivPoster"

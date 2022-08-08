@@ -19,7 +19,7 @@ class ViewModelFactory(private val pref: Context) : ViewModelProvider.NewInstanc
                 RegisterViewModel(Injection.userRepository(pref)) as T
             }
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
-                LoginViewModel(Injection.userRepository(pref)) as T
+                LoginViewModel() as T
             }
 //            modelClass.isAssignableFrom(MapsViewModel::class.java) -> {
 //                MapsViewModel(Injection.userRepository(pref)) as T

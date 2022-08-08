@@ -7,6 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mencak.R
 import com.example.mencak.model.FoodModel
 import com.example.mencak.model.response.MencakResponse
@@ -42,6 +44,7 @@ class RelatedFoodAdapter(private val listFood: ArrayList<MencakResponse.FoodResp
         holder.nameFood.text = listFood[position].namaMakanan
         Glide.with(holder.image.context)
             .load(listFood[position].fotoMakanan)
+            .transforms(CenterCrop(), RoundedCorners(16))
             .into(holder.image)
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listFood[holder.adapterPosition]) }
     }

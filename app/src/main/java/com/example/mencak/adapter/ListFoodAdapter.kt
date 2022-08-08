@@ -3,17 +3,23 @@ package com.example.mencak.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.example.mencak.R
 import com.example.mencak.model.FoodModel
+import com.example.mencak.model.response.MencakResponse
 
-class ListFoodAdapter(private val listFood: ArrayList<FoodModel>) : RecyclerView.Adapter<ListFoodAdapter.ListViewHolder>() {
+class ListFoodAdapter(private val listFood: ArrayList<MencakResponse.FoodResponse>) : RecyclerView.Adapter<ListFoodAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     interface OnItemClickCallback {
-        fun onItemClicked(data: FoodModel)
+        fun onItemClicked(data: MencakResponse.FoodResponse)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -22,6 +28,7 @@ class ListFoodAdapter(private val listFood: ArrayList<FoodModel>) : RecyclerView
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var nameFood: TextView = itemView.findViewById(R.id.tvFoodListName)
+        var image: ImageView = itemView.findViewById(R.id.ivPoster)
         var cityFood: TextView = itemView.findViewById(R.id.tvFoodListCity)
         var ratingFood: RatingBar = itemView.findViewById(R.id.ratingBar)
     }
@@ -32,12 +39,20 @@ class ListFoodAdapter(private val listFood: ArrayList<FoodModel>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, image, rating, city) = listFood[position]
-        holder.nameFood.text = name
-        holder.cityFood.text = city
-        holder.ratingFood.setRating(rating)
-
-
+//        val (name, image, rating, city) = listFood[position]
+//        holder.nameFood.text = name
+//        holder.cityFood.text = city
+//        holder.ratingFood.setRating(rating)
+//
+//
+//        holder.itemView.setOnClickListener {
+//            onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])
+//        }
+        holder.nameFood.text = listFood[position].namaMakanan
+        Glide.with(holder.image.context)
+            .load(listFood[position].fotoMakanan)
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(holder.image)
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])
         }

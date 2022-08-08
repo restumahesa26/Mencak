@@ -30,7 +30,7 @@
             android:name=".ui.detail.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.splashscreen.SplashScreenActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home" />
         <activity
@@ -40,7 +40,7 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.HomeActivity"
+            android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

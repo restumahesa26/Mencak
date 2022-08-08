@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.example.mencak.R
@@ -20,6 +21,7 @@ import com.example.mencak.model.UserPreference
 import com.example.mencak.ui.ViewModelFactory
 import com.example.mencak.ui.home.HomeActivity
 import com.example.mencak.ui.register.RegisterActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginViewModel: LoginViewModel
@@ -27,17 +29,28 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var sharedPreference: UserPreference
     private lateinit var sharedPreferences: SharedPreferences
     private var token: String? = String()
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        sharedPreferences = getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
-        token = sharedPreferences.getString(UserPreference.TOKEN, null)
-        sharedPreference = UserPreference(this)
+
+//        sharedPreferences = getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
+//        token = sharedPreferences.getString(UserPreference.TOKEN, null)
+//        sharedPreference = UserPreference(this)
+
+        auth = FirebaseAuth.getInstance()
+
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         setupView()
-        setupViewModel()
+//        setupViewModel()
         setupAction()
         playAnimation()
     }
@@ -63,12 +76,12 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    private fun setupViewModel() {
-        loginViewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(this)
-        )[LoginViewModel::class.java]
-    }
+//    private fun setupViewModel() {
+//        loginViewModel = ViewModelProvider(
+//            this,
+//            ViewModelFactory(this)
+//        )[LoginViewModel::class.java]
+//    }
 
     private fun setupAction() {
         binding.loginBtn.setOnClickListener {
@@ -82,41 +95,53 @@ class LoginActivity : AppCompatActivity() {
                     binding.layoutPasswordEditText.error = getString(R.string.add_password)
                 }
                 else -> {
-                    loginViewModel.login(email, password).observe(this) { result ->
-                        if (result != null) {
-                            when (result) {
-                                is Result.Loading -> {
-                                    binding.progressBar.visibility = View.VISIBLE
-                                }
-                                is Result.Success -> {
-                                    binding.progressBar.visibility = View.GONE
-                                    AlertDialog.Builder(this).apply {
-                                        setTitle("Yeah!")
-                                        setMessage(getString(R.string.email_success))
-                                        setPositiveButton(getString(R.string.next)) { _, _ ->
-                                            val intent = Intent(context, HomeActivity::class.java)
-                                            intent.flags =
-                                                Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                                            startActivity(intent)
-                                            finish()
-                                        }
-                                        create()
-                                        show()
-                                    }
-                                }
-                                is Result.Error -> {
-                                    binding.progressBar.visibility = View.GONE
-                                    AlertDialog.Builder(this).apply {
-                                        setTitle("Aww!")
-                                        setMessage(getString(R.string.email_failed))
-                                        setNegativeButton(getString(R.string.back)) { _, _ -> }
-                                        create()
-                                        show()
-                                    }
-                                }
+                    auth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(this) {
+                            if (it.isSuccessful) {
+                                val intent = Intent(this, HomeActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            }else {
+                                Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show()
+                                binding.emailEditText.setText("")
+                                binding.passwordEditText.setText("")
                             }
                         }
-                    }
+//                    loginViewModel.login(email, password).observe(this) { result ->
+//                        if (result != null) {
+//                            when (result) {
+//                                is Result.Loading -> {
+//                                    binding.progressBar.visibility = View.VISIBLE
+//                                }
+//                                is Result.Success -> {
+//                                    binding.progressBar.visibility = View.GONE
+//                                    AlertDialog.Builder(this).apply {
+//                                        setTitle("Yeah!")
+//                                        setMessage(getString(R.string.email_success))
+//                                        setPositiveButton(getString(R.string.next)) { _, _ ->
+//                                            val intent = Intent(context, HomeActivity::class.java)
+//                                            intent.flags =
+//                                                Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+//                                            startActivity(intent)
+//                                            finish()
+//                                        }
+//                                        create()
+//                                        show()
+//                                    }
+//                                }
+//                                is Result.Error -> {
+//                                    binding.progressBar.visibility = View.GONE
+//                                    AlertDialog.Builder(this).apply {
+//                                        setTitle("Aww!")
+//                                        setMessage(getString(R.string.email_failed))
+//                                        setNegativeButton(getString(R.string.back)) { _, _ -> }
+//                                        create()
+//                                        show()
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
                 }
             }
         }

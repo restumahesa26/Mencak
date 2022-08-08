@@ -33,7 +33,7 @@ class DetailPostActivity : AppCompatActivity() {
         val data = intent.getParcelableExtra<PostModel>("DATA")
 
         binding.tvNamePost.text = data?.name
-        binding.tvTagPost.text = data?.tag
+        binding.tvTagPost.text = "#${data?.tag}"
         binding.tvTitlePost.text = data?.title
         binding.tvComment.text = "${data?.comment} comments"
 

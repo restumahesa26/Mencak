@@ -20,7 +20,8 @@
                 android:id="@+id/ivDetailFood"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/ini_logo"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +32,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Food Name"
+                tools:text="Food Name"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +81,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Rp. 15k"
+                tools:text="Rp. 15k"
                 android:textColor="#000"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@+id/tvDetailFoodPrice"
@@ -94,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
-            android:text="City"
+            android:text="Hastag"
             android:textColor="#000"
             android:textSize="18sp"/>
 
@@ -104,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="City name"
+            tools:text="City name"
             android:textColor="#000"
             android:textSize="16sp" />
 
@@ -124,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
-            android:text="loremjhskldfjkls;dfjkszl;djfkzlsdjfzksdfadasdddddddddddddddddddddsad"
+            tools:text="loremjhskldfjkls;dfjkszl;djfkzlsdjfzksdfadasdddddddddddddddddddddsad"
             android:textColor="#000"
             android:textSize="16sp"/>
 

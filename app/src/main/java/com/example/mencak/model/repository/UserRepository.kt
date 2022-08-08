@@ -1,6 +1,7 @@
 package com.example.mencak.model.repository
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.example.mencak.model.Result
@@ -9,30 +10,22 @@ import com.example.mencak.model.api.ApiService
 import com.example.mencak.model.response.MencakResponse.RegisterResponse
 import com.example.mencak.model.response.MencakResponse.LoginResponse
 import com.example.mencak.model.wrapEspressoIdlingResource
+import com.google.firebase.auth.FirebaseAuth
 
 class UserRepository(private val apiService: ApiService, mContext: Context) {
 
     private var sharedPreferences: UserPreference = UserPreference(mContext)
+    private lateinit var auth: FirebaseAuth
 
     fun login(email: String, password: String): LiveData<Result<LoginResponse>> = liveData {
-        emit(Result.Loading)
-        wrapEspressoIdlingResource {
-            try {
-                val response = apiService.showLogin(email, password)
-                val loginResult = response.loginResult
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    val user = auth.currentUser
+                }else {
 
-                val userId = loginResult.userId
-                val name = loginResult.name
-                val token = loginResult.token
-
-                sharedPreferences.saveAuthToken(UserPreference.USER_ID, userId)
-                sharedPreferences.saveAuthToken(UserPreference.NAME, name)
-                sharedPreferences.saveAuthToken(UserPreference.TOKEN, token)
-                emit(Result.Success(response))
-            } catch (e: Exception) {
-                emit(Result.Error(e.message.toString()))
+                }
             }
-        }
     }
 
     fun saveUser(

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "337838286565",
+    "project_id": "mencak",
+    "storage_bucket": "mencak.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337838286565:android:cdd1f66ab0f3a2388bd60c",
+        "android_client_info": {
+          "package_name": "com.example.mencak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337838286565-orl53gd7ghh6llmep4h9k09pv3bi3m0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCraN6sv4mtCFAHIVcQBFGHflcSvr80FJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337838286565-mj1g6ot60v883ub8v7bema8umu1fii5s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

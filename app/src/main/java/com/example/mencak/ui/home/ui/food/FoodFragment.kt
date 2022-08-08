@@ -6,12 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mencak.adapter.ListFoodAdapter
+import com.example.mencak.adapter.RelatedFoodAdapter
 import com.example.mencak.databinding.FragmentFoodBinding
 import com.example.mencak.model.FoodModel
+import com.example.mencak.model.response.MencakResponse
 import com.example.mencak.ui.detail.DetailActivity
+import com.example.mencak.ui.home.ui.home.HomeViewModel
 
 //import com.example.mencak.ui.home.databinding.FragmentNotificationsBinding
 
@@ -38,19 +42,27 @@ class FoodFragment : Fragment() {
         rcListFood = binding.rcListFood
         rcListFood.setHasFixedSize(true)
 
-        initDataDummy()
+//        initDataDummy()
 
-        var adapter = ListFoodAdapter(listFood)
-        rcListFood.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        rcListFood.adapter = adapter
+        val homeViewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.NewInstanceFactory()
+        )[HomeViewModel::class.java]
+        homeViewModel.listFood.observe(viewLifecycleOwner) {
+            showFood(it)
+        }
 
-        adapter.setOnItemClickCallback(object: ListFoodAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: FoodModel) {
-                val intent = Intent(requireContext(), DetailActivity::class.java)
-                intent.putExtra("DATA", data)
-                startActivity(intent)
-            }
-        })
+//        var adapter = ListFoodAdapter(listFood)
+//        rcListFood.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+//        rcListFood.adapter = adapter
+//
+//        adapter.setOnItemClickCallback(object: ListFoodAdapter.OnItemClickCallback {
+//            override fun onItemClicked(data: FoodModel) {
+//                val intent = Intent(requireContext(), DetailActivity::class.java)
+//                intent.putExtra("DATA", data)
+//                startActivity(intent)
+//            }
+//        })
     }
 
     fun initDataDummy() {
@@ -73,6 +85,20 @@ class FoodFragment : Fragment() {
         listFood.add(FoodModel("Ikan Bakar", "", 5f, "Indonesia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
         listFood.add(FoodModel("Gado-Gado", "", 4.2f, "Jawa Barat", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
         listFood.add(FoodModel("Bubur Ayam", "", 4.7f, "Jakarta", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod. Morbi non arcu risus quis varius quam quisque id. Mauris ultrices eros in cursus. Dictum sit amet justo donec. Ultricies integer quis auctor elit. Integer vitae justo eget magna fermentum iaculis eu non. Convallis tellus id interdum velit laoreet id donec. Arcu odio ut sem nulla pharetra diam. Et magnis dis parturient montes nascetur. "))
+    }
+
+    private fun showFood(user: ArrayList<MencakResponse.FoodResponse>) {
+        binding.rcListFood.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        val listGithubAccAdapter = ListFoodAdapter(user)
+        binding.rcListFood.adapter = listGithubAccAdapter
+        listGithubAccAdapter.setOnItemClickCallback(object :
+            ListFoodAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: MencakResponse.FoodResponse) {
+                val detailAcc = Intent(requireContext(), DetailActivity::class.java)
+                detailAcc.putExtra("ID", data.id)
+                startActivity(detailAcc)
+            }
+        })
     }
 
     override fun onDestroyView() {
