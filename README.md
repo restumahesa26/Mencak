@@ -28,11 +28,11 @@ our team will create an application called Mencak (Searching for Culinary). The 
 
 ## Steps to replicate this project
 ### Machine Learning
-1. Dataset ingestion (from Kaggle)
+1. Dataset ingestion (from google images)
 2. Feature exploration
-3. Preprocessing (binary encoding, dividing data, check numbers of data, and scaling the data to prepare for the ML training)
-4. Define deep learning model using TensorFlow (use 2 dense layers)
-5. Hyperparameter tuning with the help of GridSearchCV from scikit-learn library and train the model
+3. Using transfer learning DenseNet201
+4. Reduce Prameter and tuning the layer selected
+5. Test Prediction
 6. Save and load model to evaluate model performance
 
 ### Mobile Development
@@ -45,10 +45,14 @@ our team will create an application called Mencak (Searching for Culinary). The 
 
 ### Cloud Computing
 1. Create a project on Google Cloud Platform
-2. Set default region as asia-southeast2(Jakarta)
-    > go to gcp console and write this command : $gcloud config set compute/region asia-southeast2
-3. Create a project on Firebase
-4. Create storage with records and profile folders
+2. Create a API for authentication on Google Cloud Identity
+   -> With 2 Sign-in Providers:
+        - Email/Password
+        - Google
+3. Create a project on Firebase for Android
+   -> Get google-services.json to integrated with Android Studio
+4. Create a firestore for the database with collection food, user, etc.
+5. Create storage with records and profile folders
     - Cloud Storage Browser page
     - Create bucket
     - Name your bucket : "-----"
@@ -56,9 +60,8 @@ our team will create an application called Mencak (Searching for Culinary). The 
     - Choose where to store your data = asia-southeast2
     - Leave the default setting
     - Create
-5. Create a firestore for the database with collection note, patient, record, staff
-6. Input machine learning model in Firebase
-
+6. Create Rest Api with cloud functions
+   -> Get Functions Url and connect to database 
 ## Technology used
 
 - [Coroutine Flow](https://developer.android.com/kotlin/flow)
@@ -75,9 +78,6 @@ Google Cloud Platform Subscription : **$200**
 
 ### Dataset:
 - https://drive.google.com/drive/folders/1S6SKK3th0OGKFRIE0xgj6hSqvbLjfJLN?usp=sharing
-
-### Paper / Journals / articles:
-- [Development of a Mobile Personal Health Record Application Designed for Emergency Care in Korea; Integrated Information from Multicenter Electronic Medical Records](https://www.mdpi.com/2076-3417/10/19/6711/pdf)
 
 ### Design Apps :
 [Design](https://www.figma.com/file/jlg0mPLIWr7AnjQLbTlDD5/Desain-MencaK?node-id=0%3A1)
