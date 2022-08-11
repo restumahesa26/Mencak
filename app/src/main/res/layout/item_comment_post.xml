@@ -10,6 +10,8 @@
         android:id="@+id/ivPostUser"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/ic_picture_empty"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,8 +28,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/ivPostUser"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toEndOf="@+id/ivPostUser"
-        app:layout_constraintTop_toTopOf="@+id/ivPostUser" />
+        app:layout_constraintTop_toTopOf="@+id/ivPostUser"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:layout_marginTop="4dp"

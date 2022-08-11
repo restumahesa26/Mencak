@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mencak.R
 import com.example.mencak.model.CommentModel
 import com.example.mencak.model.FoodModel
@@ -15,6 +18,7 @@ class CommentPostAdapter(private val listComment: ArrayList<CommentModel>) : Rec
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView = itemView.findViewById(R.id.tvNamePostComment)
         var comment: TextView = itemView.findViewById(R.id.tvDetailPostComment)
+        var image: ImageView = itemView.findViewById(R.id.ivPostUser)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -23,9 +27,13 @@ class CommentPostAdapter(private val listComment: ArrayList<CommentModel>) : Rec
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, comment) = listComment[position]
+        val (name, comment, image) = listComment[position]
         holder.name?.text = name
         holder.comment?.text = comment
+        Glide.with(holder.image.context)
+            .load(image)
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(holder.image)
     }
 
     override fun getItemCount(): Int = listComment.size

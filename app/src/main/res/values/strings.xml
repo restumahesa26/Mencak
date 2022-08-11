@@ -190,4 +190,17 @@
         <item>https://img-global.cpcdn.com/recipes/e5f7c1a5860810fb/1200x630cq70/photo.jpg</item>
     </string-array>
 
+    <string-array name="data_post_photo">
+        <item>https://res.cloudinary.com/fleetnation/image/private/c_fit,w_1120/g_south,l_text:style_gothic2:%C2%A9%20Karla,o_20,y_10/g_center,l_watermark4,o_25,y_50/v1582138872/k3vvyfxkrbpfvtxzm4p7.jpg</item>
+        <item>https://images.bauerhosting.com/legacy/lifestyle-images/celebrity/59ce55bd210e184115587fe9/Michelle_Keegan_fake_no_make_up_selfie.png</item>
+        <item>https://thumbs.dreamstime.com/b/selfie-view-woman-taking-self-portrait-fake-her-mobile-kissing-expression-50273704.jpg</item>
+        <item>https://www.cultofmac.com/wp-content/uploads/2019/06/selfie_dummy001.jpg</item>
+        <item>https://i.pinimg.com/736x/ca/cf/fb/cacffb7126e76bb6a1bbcdd9acb1c34d.jpg</item>
+        <item>https://i.pinimg.com/550x/2b/02/49/2b02498cfe90476379fcea9d60307d70.jpg</item>
+        <item>https://media.tourbar.com/photos/1/3/6/513136/80080/8022_big.jpg?updated=1444732844</item>
+        <item>https://i.pinimg.com/736x/84/74/8e/84748e569f3bf6534ba48a8523ab400d.jpg</item>
+        <item>https://i.pinimg.com/236x/84/cc/01/84cc013b01967f851d792083167fd82a.jpg</item>
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUxY7gfuGPATVzCGgV6vu3k_-O1hsignNLXw</item>
+    </string-array>
+
 </resources>

@@ -7,4 +7,5 @@ import kotlinx.parcelize.Parcelize
 data class CommentModel(
     var name: String,
     var comment: String,
+    var image: String
 ) : Parcelable
