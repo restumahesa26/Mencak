@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mencak.R
 import com.example.mencak.model.FoodModel
 
@@ -31,8 +34,12 @@ class FoodYourLocationAdapter(private val listFood: ArrayList<FoodModel>) : Recy
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, image, rating, city) = listFood[position]
-        holder.nameFood?.text = name.toString()
+        val (name, image) = listFood[position]
+        holder.nameFood.text = name
+        Glide.with(holder.image.context)
+            .load(image)
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(holder.image)
 
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])

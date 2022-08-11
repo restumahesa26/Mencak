@@ -91,7 +91,7 @@
 
         <TextView
             android:layout_marginTop="12dp"
-            android:id="@+id/tvDetailFoodCity"
+            android:id="@+id/tvTagDetailFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
@@ -125,8 +125,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
-            tools:text="loremjhskldfjkls;dfjkszl;djfkzlsdjfzksdfadasdddddddddddddddddddddsad"
+            tools:text="loremjhs kldfjkls;dfjk szl;djfkzla daddddd dddddddddddd dddddd sdjfzksdfa dasddddd ddddddddd dddddddsad"
             android:textColor="#000"
+            android:justificationMode="inter_word"
             android:textSize="16sp"/>
 
         <TextView

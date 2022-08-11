@@ -19,6 +19,7 @@
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_main.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_register.xml" value="0.259375" />
+        <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_review_food.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_splash_screen.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/fragment_dashboard.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/fragment_food.xml" value="0.259375" />
@@ -30,6 +31,7 @@
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/fragment_update_profile.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_food_your_location_horizontal.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_history_food.xml" value="0.259375" />
+        <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_list_food.xml" value="0.23796296296296296" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_populer_tag.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/menu/bottom_nav_menu.xml" value="0.259375" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2855" />

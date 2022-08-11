@@ -64,4 +64,130 @@
     <string name="see_all">See all</string>
     <string name="populer_tag">Populer Tag</string>
 
+    <string-array name="data_food_name">
+        <item>Ayam Betutu</item>
+        <item>Gado-gado Betawi</item>
+        <item>Kue Cucur</item>
+        <item>Kue Serabi</item>
+        <item>Lumpia</item>
+        <item>Pecel Lele</item>
+        <item>Rawon</item>
+        <item>Roti Ganjel Rel</item>
+        <item>Sambal Matah</item>
+        <item>Sate Lilit</item>
+        <item>Sate Madura</item>
+        <item>Seblak</item>
+        <item>Semur Jengkol</item>
+        <item>Tahu Petis</item>
+        <item>Wingko Babat</item>
+    </string-array>
+
+    <string-array name="data_food_price">
+        <item>Rp85,000</item>
+        <item>Rp20,000</item>
+        <item>Rp10,000</item>
+        <item>Rp10,000</item>
+        <item>Rp25,000</item>
+        <item>Rp10,000</item>
+        <item>Rp25,000</item>
+        <item>Rp10,000</item>
+        <item>Rp40,000</item>
+        <item>Rp20,000</item>
+        <item>Rp10,000</item>
+        <item>Rp10,000</item>
+        <item>Rp15,000</item>
+        <item>Rp5,000</item>
+        <item>Rp20,000</item>
+    </string-array>
+
+    <string-array name="data_food_description">
+        <item>Betutu adalah lauk yang terbuat dari ayam atau bebek yang utuh yang berisi bumbu, kemudian dipanggang dalam api sekam. Betutu ini telah dikenal di seluruh kabupaten di Bali. Betutu merupakan jenis makanan tradisional daerah Bali yang bahan mentahnya berupa karkas utuh itik dan ayam. Kata betutu berasal dari kata tunu yang berarti bakar dan dirangkai dengan kata be yang berarti daging</item>
+        <item>Gado-gado Betawi merupakan masakan hasil campuran dari sayur-sayuran yang direbus dan dicampur dengan potongan mentimun dengan irisan tipis, potongan tahu tempe goreng berbentuk dadu kecil, ditambah labu siam, nangka muda, kangkung, dan tauge. Selain itu makanan yang disukai oleh semua kalangan ini dicampur dengan bumbu atau saus kacang tanah yang ditumbuk halus bersama cabe rawit (jumlah sesuai selera) lalu masukan garam, gula, disertai irisan telur, kentang rebus dan di atasnya ditaburkan bawang goreng dan sedikit emping goreng juga kerupuk dan terakhir tambahan sedikit perasan jeruk nipis</item>
+        <item>Kue Cucur atau Cucur adalah jajanan khas suku Betawi. Kue ini terbuat dari tepung beras dan gula jawa atau gula aren yang digoreng. Kue Cucur memiliki bentuk yang cenderung tebal menggembung seperti gunung di bagian tengah dan tipis di bagian pinggirannya</item>
+        <item>Serabi adalah kue tradisional yang memakai bahan baku yakni tepung beras dan santan. Serabi biasanya dijajakan di pagi hari dan dimasak menggunakan tungku sehingga menghasilkan rasa yang khas. Kadang-kadang telur ayam yang telah dikocok ditambahkan ke atas adonan serabi yang sedang dimasak</item>
+        <item>Lumpia merupakan jajanan tradisional khas Tionghoa dan merupakan kuliner khas dari Semarang. Selain rasanya yang enak dan murah, lumpia juga memiliki isian yang sehat, biasanya terdiri dari sayuran segar, rebung, telur, daging, maupun makanan laut</item>
+        <item>Pecel lele atau pecek lele di Indonesia adalah nama sebuah makanan khas Jawa yang terdiri dari ikan lele dan sambal tomat. Biasanya yang dimaksud adalah ikan lele yang digoreng kering dengan minyak lalu disajikan dengan sambal tomat dan lalapan. Lalapan biasa terdiri dari kemangi, kubis, mentimun, dan kacang panjang.</item>
+        <item>Rawon adalah masakan Indonesia berupa sup daging berkuah hitam dengan campuran bumbu khas yang menggunakan kluwek. Rawon, meskipun dikenal sebagai masakan khas Jawa Timur, dikenal pula oleh masyarakat Jawa Tengah sebelah timur</item>
+        <item>Roti ganjel rel atau roti gambang adalah roti khas Semarang. Meskipun termasuk makanan khas Betawi, roti ini jarang ditemui dan harus blusukan ke pasar tradisional, seperti Pasar Johar. Dengan terbakarnya Pasar Johar, roti ini semakin jarang ditemui Roti ini berbentuk kotak dan berwarna cokelat bertabur wijen, roti ini bercita rasa kayu manis. Teksturnya ulet dan padat dipadu dengan aroma cokelat serta kayu manis yang nendang di lidah. Karena teksturnya yang ulet, memakannya dua potong saja sudah cukup mengenyangkan perut.</item>
+        <item>Sambal matah adalah sambal tradisional Bali yang dapat ditemukan di seluruh daerah di Provinsi Bali. matah memiliki arti mentah. Sambal matah merupakan sambal yang berbahan mentah tanpa digerus (diulek). Bahan-bahan sambal matah yaitu: bawang merah, cabai merah, terasi, garam, sereh, jeruk lemo dan minyak kelapa</item>
+        <item>Sate Lilit adalah sebuah varian sate asal Bali. Sate ini terbuat dari daging babi, ikan, ayam, daging sapi, atau bahkan kura-kura yang dicincang, kemudian dicampur dengan parutan kelapa, santan, jeruk nipis, bawang merah, dan merica. Daging cincang yang telah berbumbu dilekatkan pada sebuah bambu atau tebu, kemudian dipanggang di atas arang.</item>
+        <item>Sate Madura adalah sate yang memiliki bumbu khas Madura. Sate Madura biasanya terbuat dari ayam. Madura selain terkenal sebagai pulau garam, juga terkenal dengan satenya. Bumbunya adalah campuran kacang yang ditumbuk halus petis dan sedikit bawang merah. Bumbu kecap juga menjadi salah satu khas dari Pamekasan yang cukup nikmat untuk disantap. Memanggangnya dengan api dari batok kelapa yang dihanguskan terlebih dahulu yang disebut dengan arang batok kelapa</item>
+        <item>Seblak adalah masakan khas Sunda yang dikenal berasal dari wilayah Parahyangan dengan cita rasa gurih dan pedas. Terbuat dari kerupuk basah yang dimasak dengan sayuran dan sumber protein seperti telur, ayam, boga bahari, atau olahan daging sapi, dan dimasak dengan kencur.</item>
+        <item>Semur jengkol adalah makanan yang sangat popular di kawasan kota Jakarta sehingga telah menyebar ke berbagai wilayah Indonesia. Dalam sistem pembuatan semur jengkol, hal yang perlu diperhatikan adalah ketepatan bumbu untuk menghasilkan rasa semur jengkol yang pas dan menyatu dengan bahan-bahan bumbu</item>
+        <item>Tahu petis adalah jajanan khas kota Semarang berupa tahu goreng yang dimakan dengan petis yang dioleskan/disisipkan di tengah-tengah tahu. Keunikan produk ini ada pada bumbu petis berbahan dasar udang yang diracik dengan bumbu spesial sehingga menghasilkan petis udang siap saji yang bearoma harum dan tidak menyengat. Dipadu dengan tahu pong yang segar dan renyah sehingga menambah kelezatannya.</item>
+        <item>Wingko atau sering disebut juga Wingko babat adalah makanan tradisional khas Indonesia. Wingko adalah sejenis kue yang terbuat dari kelapa muda, tepung beras ketan dan gula. Wingko sangat terkenal di pantai utara pulau Jawa</item>
+    </string-array>
+
+    <string-array name="data_food_tag">
+        <item>#ayambetutu #bali #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#gadogado #kulinerbetawi #kulinerjakarta #jakarta #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#kuecucur #kulinerbetawi #kulinerjakarta #jakarta #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#serabi #kulinerjawabarat #jawabarat #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#lumpia #kulinerjawatengah #jawatengah #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#pecellele #kulinerjawabarat #jawabarat #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#sate #kulinerjawatimur #jawatimur #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#rotiganjelrel #kulinerjawatengah #jawatengah #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#sambalmatah #bali #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#satelilit #bali #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#satemadura #kulinerjawatimur #jawatimur #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#seblak #kulinerjawabarat #jawatengah #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#semurjengkol #kulinerbetawi #kulinerjakarta #jakarta #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#tahupetis #kulinerjawatengah #jawatengah #indonesia #kulinernusantara #kulinerindonesia</item>
+        <item>#wingkobabat #kulinerjawatimur #jawatimur #indonesia #kulinernusantara #kulinerindonesia</item>
+    </string-array>
+
+    <string-array name="data_food_city">
+        <item>Bali</item>
+        <item>Jakarta</item>
+        <item>Jakarta</item>
+        <item>Jawa Barat</item>
+        <item>Jawa Tengah</item>
+        <item>Jawa Barat</item>
+        <item>Jawa Timur</item>
+        <item>Jawa Tengah</item>
+        <item>Bali</item>
+        <item>Bali</item>
+        <item>Jawa Timur</item>
+        <item>Jawa Barat</item>
+        <item>Jakarta</item>
+        <item>Jawa Tengah</item>
+        <item>Jawa Timur</item>
+    </string-array>
+
+    <string-array name="data_food_rating">
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+        <item>4.8f</item>
+    </string-array>
+
+    <string-array name="data_food_foto">
+        <item>https://awsimages.detik.net.id/community/media/visual/2021/08/27/resep-ayam-betutu-gilimanuk_43.jpeg?w=1200</item>
+        <item>https://i0.wp.com/img-global.cpcdn.com/recipes/fa82b00662340933/860x610cq70/photo.jpg</item>
+        <item>https://piknikdong.com/wp-content/uploads/2020/05/Resep-Kue-Cucur.jpg</item>
+        <item>https://sweetrip.id/wp-content/uploads/2022/02/IMG_6935.jpg</item>
+        <item>https://awsimages.detik.net.id/community/media/visual/2021/12/06/resep-lumpia-bengkuang-ebi_43.jpeg?w=1200</item>
+        <item>https://img.kurio.network/OpH6XcpyRpN0qV_bjh4Xp8sKOx0=/1200x900/filters:quality(80)/https://kurio-img.kurioapps.com/20/11/21/b2aecfb2-fefd-415f-9424-2485a95d41ef.png</item>
+        <item>https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2019/07/18/1838279198.jpg</item>
+        <item>https://asset.kompas.com/crops/pr1eqC8G_2s20GJJbM01-dII3Vw=/0x77:1280x931/750x500/data/photo/2019/10/19/5daa74511060c.jpeg</item>
+        <item>https://jajabakes.com/wp-content/uploads/2019/05/how-to-make-sambal-matah-3-720x540.jpg</item>
+        <item>https://awsimages.detik.net.id/community/media/visual/2021/09/27/resep-sate-lilit-ikan-bali_43.jpeg?w=1200</item>
+        <item>https://img.okezone.com/content/2017/09/29/298/1785683/okezone-week-end-menilik-sejarah-dan-keistimewaan-sate-madura-fxAFpHqWnw.jpg</item>
+        <item>https://www.dapurkintamani.com/wp-content/uploads/2021/10/seblak-kuah-ceker.webp</item>
+        <item>https://piknikdong.com/wp-content/uploads/2020/06/Resep-Semur-Jengkol.jpg</item>
+        <item>https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2019/07/18/1838279198.jpg</item>
+        <item>https://img-global.cpcdn.com/recipes/e5f7c1a5860810fb/1200x630cq70/photo.jpg</item>
+    </string-array>
+
 </resources>

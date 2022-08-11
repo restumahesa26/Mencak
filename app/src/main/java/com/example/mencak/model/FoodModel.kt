@@ -9,5 +9,7 @@ data class FoodModel(
     var image: String,
     var rating: Float,
     var city: String,
-    var description: String? = null
+    var description: String,
+    var price: String,
+    var tag: String,
 ) : Parcelable

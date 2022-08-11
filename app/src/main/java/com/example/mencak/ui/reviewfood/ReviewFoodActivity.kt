@@ -7,8 +7,12 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mencak.R
 import com.example.mencak.databinding.ActivityReviewFoodBinding
+import com.example.mencak.model.FoodModel
 
 class ReviewFoodActivity : AppCompatActivity() {
 
@@ -18,6 +22,12 @@ class ReviewFoodActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityReviewFoodBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val data = intent.getParcelableExtra<FoodModel>("DATA")
+        Glide.with(applicationContext)
+            .load(data?.image)
+            .transforms(CenterCrop(), RoundedCorners(24))
+            .into(binding.ivPoster)
 
         getSupportActionBar()?.hide()
         setupView()

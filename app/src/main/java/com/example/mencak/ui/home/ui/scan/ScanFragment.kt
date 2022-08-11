@@ -107,7 +107,7 @@ class ScanFragment : Fragment() {
             }
         }
 
-        val classFood = arrayListOf("Ayam Betutu", "Gado-gado Betawi", "Kue Cucur", "Kue Serabi","Lumpia", "Pecel Lele", "Rawon", "Roti Ganjel Rel", "Sambal Matah", "Sate Lilit", "Sate Madura", "Seblak", "Semur Jengkol", "Tahu Petis", "Wingko Babat")
+        val classFood = arrayListOf("Ayam Betutu", "Gado-gado Betawi", "Kue Cucur", "Kue Serabi","Lumpia", "Pecel Lele", "Rawon", "Roti Ganjel Rel", "Sambal Matah", "Sate Lilit", "Sate Madura", "Seblak", "Semur Jengkol", "Tahu Petis", "Wingko Babat", "Model Belum Terlalu Ahli")
         binding.tvPredict.setText(classFood[maxPos])
 
         foodModel.close()

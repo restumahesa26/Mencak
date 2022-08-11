@@ -15,11 +15,12 @@ import com.example.mencak.R
 import com.example.mencak.model.FoodModel
 import com.example.mencak.model.response.MencakResponse
 
-class ListFoodAdapter(private val listFood: ArrayList<MencakResponse.FoodResponse>) : RecyclerView.Adapter<ListFoodAdapter.ListViewHolder>() {
+class ListFoodAdapter(private val listFood: ArrayList<FoodModel>) : RecyclerView.Adapter<ListFoodAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     interface OnItemClickCallback {
-        fun onItemClicked(data: MencakResponse.FoodResponse)
+//        fun onItemClicked(data: MencakResponse.FoodResponse)
+        fun onItemClicked(data: FoodModel)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -39,23 +40,26 @@ class ListFoodAdapter(private val listFood: ArrayList<MencakResponse.FoodRespons
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-//        val (name, image, rating, city) = listFood[position]
-//        holder.nameFood.text = name
-//        holder.cityFood.text = city
-//        holder.ratingFood.setRating(rating)
-//
-//
-//        holder.itemView.setOnClickListener {
-//            onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])
-//        }
-        holder.nameFood.text = listFood[position].namaMakanan
+        val (name, image, rating, city) = listFood[position]
+        holder.nameFood.text = name
+        holder.cityFood.text = city
+        holder.ratingFood.setRating(rating)
         Glide.with(holder.image.context)
-            .load(listFood[position].fotoMakanan)
+            .load(image)
             .transforms(CenterCrop(), RoundedCorners(16))
             .into(holder.image)
+
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])
         }
+//        holder.nameFood.text = listFood[position].namaMakanan
+//        Glide.with(holder.image.context)
+//            .load(listFood[position].fotoMakanan)
+//            .transforms(CenterCrop(), RoundedCorners(16))
+//            .into(holder.image)
+//        holder.itemView.setOnClickListener {
+//            onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])
+//        }
     }
 
     override fun getItemCount(): Int = listFood.size
