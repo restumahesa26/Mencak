@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mencak.R
 import com.example.mencak.model.PostModel
 
@@ -40,6 +43,14 @@ class PostAdapter(private val listPost: ArrayList<PostModel>) : RecyclerView.Ada
         holder.title?.text = title
         holder.comment?.text = "$comment comments"
         holder.tag?.text = "#$tag"
+        Glide.with(holder.image.context)
+            .load(image)
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(holder.image)
+        Glide.with(holder.profil.context)
+            .load(profil)
+            .circleCrop()
+            .into(holder.profil)
 
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listPost[holder.adapterPosition])

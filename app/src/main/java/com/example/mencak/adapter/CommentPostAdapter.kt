@@ -32,7 +32,7 @@ class CommentPostAdapter(private val listComment: ArrayList<CommentModel>) : Rec
         holder.comment?.text = comment
         Glide.with(holder.image.context)
             .load(image)
-            .transforms(CenterCrop(), RoundedCorners(16))
+            .circleCrop()
             .into(holder.image)
     }
 

@@ -7,6 +7,9 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mencak.R
 import com.example.mencak.adapter.CommentPostAdapter
 import com.example.mencak.adapter.RelatedFoodAdapter
@@ -36,6 +39,14 @@ class DetailPostActivity : AppCompatActivity() {
         binding.tvTagPost.text = "#${data?.tag}"
         binding.tvTitlePost.text = data?.title
         binding.tvComment.text = "${data?.comment} comments"
+        Glide.with(applicationContext)
+            .load(data?.image)
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(binding.ivPostImage)
+        Glide.with(applicationContext)
+            .load(data?.profil)
+            .circleCrop()
+            .into(binding.ivPostUser)
 
         rcComment = binding.rcListPost
         rcComment.setHasFixedSize(true)

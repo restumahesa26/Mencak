@@ -214,7 +214,6 @@
         <item>Leonardo Kunti</item>
         <item>Ucok Palangkaraya</item>
         <item>Jumaedi</item>
-        <item>Yudi Justin</item>
     </string-array>
 
     <string-array name="data_post_username">
@@ -228,7 +227,6 @@
         <item>dazzle</item>
         <item>ucokcokcok</item>
         <item>jumaedi3</item>
-        <item>justincase</item>
     </string-array>
 
     <string-array name="data_post_title">
@@ -237,11 +235,37 @@
         <item>Cita rasa kaldu yang gurih, sebuah resep nenek moyangku</item>
         <item>Pengalaman buruk, makan di resto terkenal rasa eceran</item>
         <item>Pertama kali masak makanan ini, rate nya dong kakak</item>
-        <item>Ask, makanan paling bagus habis ngegym itu apa sih?</item>
-        <item>yang alergi kacang, masuk sini dong</item>
+        <item>Asik, makanan paling bagus habis ngegym itu apa sih?</item>
+        <item>Yang alergi kacang, masuk sini dong</item>
         <item>Pengalaman pahit makan di daerah ini, harganya bikin dompet jadi peci</item>
         <item>Dimana bisa nyari makanan autentik indo? resto fav hunter</item>
         <item>Capek jalan, mampir dulu ke sate madura</item>
+    </string-array>
+
+    <string-array name="data_post_tag">
+        <item>#sotobabat</item>
+        <item>#nasigoreng</item>
+        <item>#kari</item>
+        <item>#badfood</item>
+        <item>#gymfood</item>
+        <item>#ratefood</item>
+        <item>#alergikacang</item>
+        <item>#pengalamanburuk</item>
+        <item>#hunterfood</item>
+        <item>#satemadura</item>
+    </string-array>
+
+    <string-array name="data_post_comment">
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
     </string-array>
 
     <string-array name="data_comment_photo">

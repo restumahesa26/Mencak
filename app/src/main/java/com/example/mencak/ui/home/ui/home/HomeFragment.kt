@@ -56,7 +56,7 @@ class HomeFragment : Fragment() {
 
 //        initDataDummy()
         initDataDummy2()
-        initDataDummy3()
+//        initDataDummy3()
 
 //        val homeViewModel = ViewModelProvider(
 //            this,
@@ -102,6 +102,8 @@ class HomeFragment : Fragment() {
             }
         })
 
+        listPost.addAll(listPosts)
+
         var adapter3 = PostAdapter(listPost)
         rcPost.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rcPost.adapter = adapter3
@@ -139,6 +141,22 @@ class HomeFragment : Fragment() {
                 listFood.add(food)
             }
             return listFood
+        }
+
+    private val listPosts: ArrayList<PostModel>
+        get() {
+            val dataName = resources.getStringArray(R.array.data_post_name)
+            val dataProfil = resources.getStringArray(R.array.data_post_photo)
+            val dataPhoto = resources.getStringArray(R.array.data_post_photo)
+            val dataTitle = resources.getStringArray(R.array.data_post_title)
+            val dataComment = resources.getStringArray(R.array.data_post_comment)
+            val dataTag = resources.getStringArray(R.array.data_post_tag)
+            val listPost = ArrayList<PostModel>()
+            for (i in dataName.indices) {
+                val post = PostModel(dataName[i], dataProfil[i], dataTitle[i], dataPhoto[i], dataComment[i].toInt(), dataTag[i])
+                listPost.add(post)
+            }
+            return listPost
         }
 
 //    fun initDataDummy() {
