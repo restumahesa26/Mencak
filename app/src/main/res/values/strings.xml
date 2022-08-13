@@ -203,4 +203,45 @@
         <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUxY7gfuGPATVzCGgV6vu3k_-O1hsignNLXw</item>
     </string-array>
 
+    <string-array name="data_post_name">
+        <item>Mufti Restu Mahesa</item>
+        <item>Adde Nanda C. Putra</item>
+        <item>M. Daffa Alfajri</item>
+        <item>Richard Guinea</item>
+        <item>Syailendra Quallga</item>
+        <item>Rey MysterMan</item>
+        <item>Inter Bella</item>
+        <item>Leonardo Kunti</item>
+        <item>Ucok Palangkaraya</item>
+        <item>Jumaedi</item>
+        <item>Yudi Justin</item>
+    </string-array>
+
+    <string-array name="data_post_username">
+        <item>muftirestu</item>
+        <item>nandaadde</item>
+        <item>daffa21</item>
+        <item>lusogea</item>
+        <item>quallgabest</item>
+        <item>mysterio3125</item>
+        <item>intercemungut</item>
+        <item>dazzle</item>
+        <item>ucokcokcok</item>
+        <item>jumaedi3</item>
+        <item>justincase</item>
+    </string-array>
+
+    <string-array name="data_post_title">
+        <item>Benarkah Soto Babat bisa menggunakan ayam? a thread</item>
+        <item>Nasi Goreng, makanan khas yang dimiliki setiap negara</item>
+        <item>Cita rasa kaldu yang gurih, sebuah resep nenek moyangku</item>
+        <item>Pengalaman buruk, makan di resto terkenal rasa eceran</item>
+        <item>Pertama kali masak makanan ini, rate nya dong kakak</item>
+        <item>Ask, makanan paling bagus habis ngegym itu apa sih?</item>
+        <item>yang alergi kacang, masuk sini dong</item>
+        <item>Pengalaman pahit makan di daerah ini, harganya bikin dompet jadi peci</item>
+        <item>Dimana bisa nyari makanan autentik indo? resto fav hunter</item>
+        <item>Capek jalan, mampir dulu ke sate madura</item>
+    </string-array>
+
 </resources>
