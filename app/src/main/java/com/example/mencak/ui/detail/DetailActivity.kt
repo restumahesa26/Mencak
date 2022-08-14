@@ -1,17 +1,21 @@
 package com.example.mencak.ui.detail
 
 import android.content.Intent
+import android.graphics.text.LineBreaker.JUSTIFICATION_MODE_INTER_WORD
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.example.mencak.R
 import com.example.mencak.adapter.PostAdapter
 import com.example.mencak.adapter.RelatedFoodAdapter
 import com.example.mencak.databinding.ActivityDetailBinding
@@ -33,6 +37,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var rcRelatedFood: RecyclerView
     private lateinit var rcPost: RecyclerView
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -45,15 +50,19 @@ class DetailActivity : AppCompatActivity() {
         val data = intent.getParcelableExtra<FoodModel>("DATA")
 
         binding.tvDetailFoodName.text = data?.name
-        binding.tvDetailFoodCityValue.text = data?.city
+        binding.tvDetailFoodCityValue.text = "City : ${data?.city}"
         binding.ratingBarDetailFood.rating = data!!.rating
-        binding.tvTagDetailFood.text = data.tag
-        binding.tvDetailFoodPriceValue.text = data.price
-        binding.tvDetailFoodDescriptionValue.text = data.description
+        binding.tvTagDetailFood.text = data?.tag
+        binding.tvDetailFoodPriceValue.text = data?.price
+        binding.tvDetailFoodDescriptionValue.text = data?.description
         Glide.with(applicationContext)
-            .load(data.image)
+            .load(data?.image)
             .transforms(CenterCrop(), RoundedCorners(16))
             .into(binding.ivDetailFood)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            binding.tvDetailFoodDescriptionValue.justificationMode = JUSTIFICATION_MODE_INTER_WORD
+        }
 
         supportActionBar?.hide()
         setupView()
@@ -65,20 +74,23 @@ class DetailActivity : AppCompatActivity() {
         rcPost.setHasFixedSize(true)
 
 //        initDataDummy()
-        initDataDummy2()
+//        initDataDummy2()
 
-//        var adapter = RelatedFoodAdapter(listFood)
-//        rcRelatedFood.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-//        rcRelatedFood.adapter = adapter
-//
-//        adapter.setOnItemClickCallback(object : RelatedFoodAdapter.OnItemClickCallback {
-//            override fun onItemClicked(data: FoodModel) {
-//                val intent = Intent(this@DetailActivity, DetailActivity::class.java)
-//                intent.putExtra("DATA", data)
-//                startActivity(intent)
-//                finish()
-//            }
-//        })
+        listFood.addAll(listFoods)
+
+        var adapter = RelatedFoodAdapter(listFood)
+        rcRelatedFood.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rcRelatedFood.adapter = adapter
+
+        adapter.setOnItemClickCallback(object : RelatedFoodAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: FoodModel) {
+                val intent = Intent(this@DetailActivity, DetailActivity::class.java)
+                intent.putExtra("DATA", data)
+                startActivity(intent)
+            }
+        })
+
+        listPost.addAll(listPosts)
 
         var adapter2 = PostAdapter(listPost)
         rcPost.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -101,6 +113,9 @@ class DetailActivity : AppCompatActivity() {
 
         binding.btnCreatePost.setOnClickListener {
             val intent = Intent(this@DetailActivity, CreatePostActivity::class.java)
+            intent.putExtra("data_nama", data.name)
+            intent.putExtra("data_asal", data.city)
+            intent.putExtra("data_tag", data.tag)
             startActivity(intent)
         }
     }
@@ -116,6 +131,39 @@ class DetailActivity : AppCompatActivity() {
             )
         }
     }
+
+    private val listFoods: ArrayList<FoodModel>
+        get() {
+            val dataName = resources.getStringArray(R.array.data_food_name)
+            val dataDescription = resources.getStringArray(R.array.data_food_description)
+            val dataPhoto = resources.getStringArray(R.array.data_food_foto)
+            val dataCity = resources.getStringArray(R.array.data_food_city)
+            val dataPrice = resources.getStringArray(R.array.data_food_price)
+            val dataTag = resources.getStringArray(R.array.data_food_tag)
+            val dataRating = resources.getStringArray(R.array.data_food_rating)
+            val listFood = ArrayList<FoodModel>()
+            for (i in dataName.indices) {
+                val food = FoodModel(dataName[i], dataPhoto[i], dataRating[i].toFloat(), dataCity[i], dataDescription[i], dataPrice[i], dataTag[i])
+                listFood.add(food)
+            }
+            return listFood
+        }
+
+    private val listPosts: ArrayList<PostModel>
+        get() {
+            val dataName = resources.getStringArray(R.array.data_comment_name)
+            val dataProfil = resources.getStringArray(R.array.data_comment_photo)
+            val dataPhoto = resources.getStringArray(R.array.data_post_photo)
+            val dataTitle = resources.getStringArray(R.array.data_post_title)
+            val dataComment = resources.getStringArray(R.array.data_post_comment)
+            val dataTag = resources.getStringArray(R.array.data_post_tag)
+            val listPost = ArrayList<PostModel>()
+            for (i in dataName.indices) {
+                val post = PostModel(dataName[i], dataProfil[i], dataTitle[i], dataPhoto[i], dataComment[i].toInt(), dataTag[i])
+                listPost.add(post)
+            }
+            return listPost
+        }
 
 //    fun initDataDummy() {
 //        listFood = ArrayList()

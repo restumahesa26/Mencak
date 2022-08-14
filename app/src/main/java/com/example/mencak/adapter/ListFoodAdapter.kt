@@ -15,7 +15,7 @@ import com.example.mencak.R
 import com.example.mencak.model.FoodModel
 import com.example.mencak.model.response.MencakResponse
 
-class ListFoodAdapter(private val listFood: ArrayList<FoodModel>) : RecyclerView.Adapter<ListFoodAdapter.ListViewHolder>() {
+class ListFoodAdapter(private var listFood: ArrayList<FoodModel>) : RecyclerView.Adapter<ListFoodAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     interface OnItemClickCallback {
@@ -25,6 +25,16 @@ class ListFoodAdapter(private val listFood: ArrayList<FoodModel>) : RecyclerView
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
+    }
+
+    // method for filtering our recyclerview items.
+    fun filterList(filterlist: ArrayList<FoodModel>) {
+        // below line is to add our filtered
+        // list in our course array list.
+        listFood = filterlist
+        // below line is to notify our adapter
+        // as change in recycler view data.
+        notifyDataSetChanged()
     }
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

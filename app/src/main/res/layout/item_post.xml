@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitlePost" />
 
     <ImageView
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="6dp"
         android:id="@+id/logo_comment"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ivPostImage" />
 
     <TextView
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="4dp"
         android:id="@+id/tvComment"
         android:layout_width="0dp"

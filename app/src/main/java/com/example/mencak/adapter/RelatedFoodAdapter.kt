@@ -13,11 +13,11 @@ import com.example.mencak.R
 import com.example.mencak.model.FoodModel
 import com.example.mencak.model.response.MencakResponse
 
-class RelatedFoodAdapter(private val listFood: ArrayList<MencakResponse.FoodResponse>) : RecyclerView.Adapter<RelatedFoodAdapter.ListViewHolder>() {
+class RelatedFoodAdapter(private val listFood: ArrayList<FoodModel>) : RecyclerView.Adapter<RelatedFoodAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     interface OnItemClickCallback {
-        fun onItemClicked(data: MencakResponse.FoodResponse)
+        fun onItemClicked(data: FoodModel)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -35,18 +35,18 @@ class RelatedFoodAdapter(private val listFood: ArrayList<MencakResponse.FoodResp
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-//        val (name, image, rating, city) = listFood[position]
-//        holder.nameFood?.text = name.toString()
-//
-//        holder.itemView.setOnClickListener {
-//            onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])
-//        }
-        holder.nameFood.text = listFood[position].namaMakanan
+        val (name, image) = listFood[position]
+        holder.nameFood?.text = name
+
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(listFood[holder.adapterPosition])
+        }
+//        holder.nameFood.text = listFood[position].name
         Glide.with(holder.image.context)
-            .load(listFood[position].fotoMakanan)
+            .load(image)
             .transforms(CenterCrop(), RoundedCorners(16))
             .into(holder.image)
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listFood[holder.adapterPosition]) }
+//        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listFood[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int = listFood.size

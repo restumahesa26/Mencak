@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mencak.R
 import com.example.mencak.adapter.*
 import com.example.mencak.databinding.FragmentHomeBinding
@@ -117,13 +120,18 @@ class HomeFragment : Fragment() {
         })
 
         binding.linearLayoutFood.setOnClickListener {
-            Toast.makeText(requireContext(), "Kamu Mengklik Tombol Scan Food", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Please click bottom navigation to access scan food menu", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnCreatePost.setOnClickListener {
             val intent = Intent(requireContext(), CreatePostActivity::class.java)
             startActivity(intent)
         }
+
+        Glide.with(requireContext())
+            .load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6zes53m4a_2VLTcmTn_bHk8NO5SkuWfcQbg&usqp=CAU")
+            .circleCrop()
+            .into(binding.ivProfil)
     }
 
     private val listFoods: ArrayList<FoodModel>
@@ -145,8 +153,8 @@ class HomeFragment : Fragment() {
 
     private val listPosts: ArrayList<PostModel>
         get() {
-            val dataName = resources.getStringArray(R.array.data_post_name)
-            val dataProfil = resources.getStringArray(R.array.data_post_photo)
+            val dataName = resources.getStringArray(R.array.data_comment_name)
+            val dataProfil = resources.getStringArray(R.array.data_comment_photo)
             val dataPhoto = resources.getStringArray(R.array.data_post_photo)
             val dataTitle = resources.getStringArray(R.array.data_post_title)
             val dataComment = resources.getStringArray(R.array.data_post_comment)
@@ -242,17 +250,17 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-    private fun showFood(user: ArrayList<MencakResponse.FoodResponse>) {
-        binding.rcListFoodHorizontal.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val listGithubAccAdapter = RelatedFoodAdapter(user)
-        binding.rcListFoodHorizontal.adapter = listGithubAccAdapter
-        listGithubAccAdapter.setOnItemClickCallback(object :
-            RelatedFoodAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: MencakResponse.FoodResponse) {
-                val detailAcc = Intent(requireContext(), DetailActivity::class.java)
-                detailAcc.putExtra("ID", data.id)
-                startActivity(detailAcc)
-            }
-        })
-    }
+//    private fun showFood(user: ArrayList<MencakResponse.FoodResponse>) {
+//        binding.rcListFoodHorizontal.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//        val listGithubAccAdapter = RelatedFoodAdapter(user)
+//        binding.rcListFoodHorizontal.adapter = listGithubAccAdapter
+//        listGithubAccAdapter.setOnItemClickCallback(object :
+//            RelatedFoodAdapter.OnItemClickCallback {
+//            override fun onItemClicked(data: MencakResponse.FoodResponse) {
+//                val detailAcc = Intent(requireContext(), DetailActivity::class.java)
+//                detailAcc.putExtra("ID", data.id)
+//                startActivity(detailAcc)
+//            }
+//        })
+//    }
 }

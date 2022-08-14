@@ -8,6 +8,7 @@
     tools:context=".ui.home.ui.profile.updateProfile.UpdateProfileFragment">
 
     <ImageView
+        android:id="@+id/profilePhoto"
         android:layout_marginTop="24dp"
         android:layout_gravity="center"
         android:src="@drawable/ic_picture_empty"
@@ -101,32 +102,43 @@
             app:passwordToggleEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:background="@drawable/bg_scan_food"
-        android:id="@+id/updateProfileButton"
+    <LinearLayout
         android:layout_gravity="center"
-        android:layout_width="120dp"
-        android:layout_height="55dp"
         android:layout_marginTop="16dp"
-        android:textAllCaps="false"
-        android:textColor="#D61C4E"
-        android:text="Update Profile"
-        app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
-        app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
-        app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:background="@drawable/bg_button_red"
-        android:id="@+id/logoutButton"
-        android:layout_gravity="center"
-        android:layout_width="120dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:textAllCaps="false"
-        android:textColor="#FAC213"
-        android:text="Logout"
-        app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
-        app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
-        app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/bg_scan_food"
+            android:id="@+id/updateProfileButton"
+            android:layout_gravity="center"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:textAllCaps="false"
+            android:layout_marginRight="8dp"
+            android:textColor="#D61C4E"
+            android:text="Update Profile"
+            app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
+            app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
+            app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/bg_button_red"
+            android:id="@+id/logoutButton"
+            android:layout_gravity="center"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:textAllCaps="false"
+            android:textColor="#FAC213"
+            android:layout_marginLeft="8dp"
+            android:text="Logout"
+            app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
+            app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
+            app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

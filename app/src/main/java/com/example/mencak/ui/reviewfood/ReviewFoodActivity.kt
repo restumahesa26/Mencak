@@ -1,18 +1,19 @@
 package com.example.mencak.ui.reviewfood
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.example.mencak.R
 import com.example.mencak.databinding.ActivityReviewFoodBinding
 import com.example.mencak.model.FoodModel
+import java.text.NumberFormat
 
 class ReviewFoodActivity : AppCompatActivity() {
 
@@ -31,6 +32,16 @@ class ReviewFoodActivity : AppCompatActivity() {
 
         getSupportActionBar()?.hide()
         setupView()
+        binding.btnReviewFood.setOnClickListener {
+            sendReview()
+        }
+    }
+
+    private fun sendReview() {
+        binding.etPrice.text.clear()
+        binding.ratingBarDetailFood.rating = 0f
+        Toast.makeText(this, "Success Send Review", Toast.LENGTH_SHORT).show()
+        this.onBackPressed()
     }
 
     private fun setupView() {

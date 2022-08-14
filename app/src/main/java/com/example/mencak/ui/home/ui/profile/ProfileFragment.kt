@@ -1,12 +1,22 @@
 package com.example.mencak.ui.home.ui.profile
 
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.transition.Slide
+import android.transition.TransitionManager
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.PopupWindow
 import android.widget.TextView
+import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.example.mencak.R
 import com.example.mencak.adapter.SectionProfileAdapter
 import com.example.mencak.databinding.FragmentHomeBinding
@@ -39,6 +49,15 @@ class ProfileFragment : Fragment() {
         )
         binding.viewPager.adapter = sectionPagerAdapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)
+
+        Glide.with(requireContext())
+            .load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6zes53m4a_2VLTcmTn_bHk8NO5SkuWfcQbg&usqp=CAU")
+            .circleCrop()
+            .into(binding.ivProfil)
+
+        binding.iconInfo.setOnClickListener {
+           //
+        }
     }
 
     override fun onDestroyView() {

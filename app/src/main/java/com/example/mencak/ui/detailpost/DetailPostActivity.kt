@@ -1,10 +1,15 @@
 package com.example.mencak.ui.detailpost
 
+import android.app.Activity
+import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -47,16 +52,37 @@ class DetailPostActivity : AppCompatActivity() {
             .load(data?.profil)
             .circleCrop()
             .into(binding.ivPostUser)
+        binding.btnSendComment.setOnClickListener {
+            sendPostOnClick(binding.editTextTextMultiLine.text.toString())
+        }
 
         rcComment = binding.rcListPost
         rcComment.setHasFixedSize(true)
 
-        initDataDummy()
+        listComment.addAll(listComments)
 
         var adapter = CommentPostAdapter(listComment)
         rcComment.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rcComment.adapter = adapter
     }
+
+    fun sendPostOnClick(msg: String) {
+        binding.editTextTextMultiLine.text.clear()
+        Toast.makeText(this, "Success Send Comment $msg", Toast.LENGTH_SHORT).show()
+    }
+
+    private val listComments: ArrayList<CommentModel>
+        get() {
+            val dataName = resources.getStringArray(R.array.data_comment_name)
+            val dataComment = resources.getStringArray(R.array.data_comment)
+            val dataPhoto = resources.getStringArray(R.array.data_comment_photo)
+            val listComment = ArrayList<CommentModel>()
+            for (i in dataName.indices) {
+                val comment = CommentModel(dataName[i], dataComment[i], dataPhoto[i])
+                listComment.add(comment)
+            }
+            return listComment
+        }
 
     private fun setupView() {
         @Suppress("DEPRECATION")

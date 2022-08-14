@@ -5,10 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.mencak.R
 import com.example.mencak.adapter.ListFoodAdapter
 import com.example.mencak.adapter.RelatedFoodAdapter
@@ -26,6 +30,7 @@ class FoodFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var rcListFood: RecyclerView
     private var listFood = ArrayList<FoodModel>()
+    lateinit var adapter: ListFoodAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,9 +59,10 @@ class FoodFragment : Fragment() {
 //        }
         listFood.addAll(listFoods)
 
-        val adapter = ListFoodAdapter(listFood)
+        adapter = ListFoodAdapter(listFood)
         rcListFood.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rcListFood.adapter = adapter
+        adapter.notifyDataSetChanged()
 
         adapter.setOnItemClickCallback(object: ListFoodAdapter.OnItemClickCallback {
             override fun onItemClicked(data: FoodModel) {
@@ -65,6 +71,46 @@ class FoodFragment : Fragment() {
                 startActivity(intent)
             }
         })
+
+        binding.etSearch.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                filter(newText)
+                return false
+            }
+        })
+
+        Glide.with(requireContext())
+            .load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6zes53m4a_2VLTcmTn_bHk8NO5SkuWfcQbg&usqp=CAU")
+            .circleCrop()
+            .into(binding.ivProfil)
+    }
+
+    private fun filter(text: String) {
+        // creating a new array list to filter our data.
+        val filteredlist: ArrayList<FoodModel> = ArrayList()
+
+        // running a for loop to compare elements.
+        for (item in listFood) {
+            // checking if the entered string matched with any item of our recycler view.
+            if (item.name.toLowerCase().contains(text.toLowerCase())) {
+                // if the item is matched we are
+                // adding it to our filtered list.
+                filteredlist.add(item)
+            }
+        }
+        if (filteredlist.isEmpty()) {
+            // if no item is added in filtered list we are
+            // displaying a toast message as no data found.
+            Toast.makeText(requireContext(), "No Data Found", Toast.LENGTH_SHORT).show()
+        } else {
+            // at last we are passing that filtered
+            // list to our adapter class.
+            adapter.filterList(filteredlist)
+        }
     }
 
     private val listFoods: ArrayList<FoodModel>

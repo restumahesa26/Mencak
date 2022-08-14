@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
@@ -21,6 +22,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mencak.R
 import com.example.mencak.databinding.ActivityCreatePostBinding
 import java.io.File
@@ -62,6 +66,16 @@ class CreatePostActivity : AppCompatActivity() {
         getSupportActionBar()?.hide();
         setupView()
 
+        val data_nama = intent.getStringExtra("data_nama").toString()
+        val data_asal = intent.getStringExtra("data_asal").toString()
+        val data_tag = intent.getStringExtra("data_tag").toString()
+
+        if(intent.hasExtra("data_nama")) {
+            binding.tvFoodName.visibility = View.VISIBLE
+            binding.tvFoodName.text = "$data_nama, $data_asal"
+            binding.etTag.setText(data_tag)
+        }
+
         binding.captureButton.setOnClickListener {
             startTakePhoto()
         }
@@ -71,6 +85,7 @@ class CreatePostActivity : AppCompatActivity() {
         }
 
         binding.btnCreatePost.setOnClickListener {
+            Toast.makeText(this, "Success Create Post", Toast.LENGTH_SHORT).show()
             finish()
         }
     }
@@ -174,7 +189,11 @@ class CreatePostActivity : AppCompatActivity() {
                 true
             )
 
-            binding.previewImageView.setImageBitmap(result)
+            //binding.previewImageView.setImageBitmap(result)
+            Glide.with(applicationContext)
+                .load(result)
+                .transforms(CenterCrop(), RoundedCorners(16))
+                .into(binding.previewImageView)
         }
     }
 
@@ -194,7 +213,11 @@ class CreatePostActivity : AppCompatActivity() {
             val myFile = uriToFile(selectedImg, this@CreatePostActivity)
 
             getFile = myFile
-            binding.previewImageView.setImageURI(selectedImg)
+            //binding.previewImageView.setImageURI(selectedImg)
+            Glide.with(applicationContext)
+                .load(selectedImg)
+                .transforms(CenterCrop(), RoundedCorners(16))
+                .into(binding.previewImageView)
         }
     }
 

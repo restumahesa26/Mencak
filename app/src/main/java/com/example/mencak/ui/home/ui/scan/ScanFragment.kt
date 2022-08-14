@@ -22,8 +22,12 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.example.mencak.R
 import com.example.mencak.databinding.FragmentScanBinding
 import com.example.mencak.ml.FoodModelML
+import com.example.mencak.model.FoodModel
+import com.example.mencak.ui.detail.DetailActivity
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
@@ -35,6 +39,7 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class ScanFragment : Fragment() {
 
@@ -45,6 +50,9 @@ class ScanFragment : Fragment() {
     private val imageSize = 299
 
     private val foodList = arrayOf("Pecel Lele", "Gorengan", "Nasi Goreng")
+
+    private var listFood = ArrayList<FoodModel>()
+    private var data = FoodModel("", "", 0f, "", "", "", "")
 
     companion object {
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
@@ -107,8 +115,29 @@ class ScanFragment : Fragment() {
             }
         }
 
-        val classFood = arrayListOf("Ayam Betutu", "Gado-gado Betawi", "Kue Cucur", "Kue Serabi","Lumpia", "Pecel Lele", "Rawon", "Roti Ganjel Rel", "Sambal Matah", "Sate Lilit", "Sate Madura", "Seblak", "Semur Jengkol", "Tahu Petis", "Wingko Babat", "Model Belum Terlalu Ahli")
-        binding.tvPredict.setText(classFood[maxPos])
+        val dataName = resources.getStringArray(R.array.data_food_name)
+        val dataDescription = resources.getStringArray(R.array.data_food_description)
+        val dataPhotos = resources.getStringArray(R.array.data_food_foto)
+        val dataCity = resources.getStringArray(R.array.data_food_city)
+        val dataPrice = resources.getStringArray(R.array.data_food_price)
+        val dataTag = resources.getStringArray(R.array.data_food_tag)
+        val dataRating = resources.getStringArray(R.array.data_food_rating)
+        for (i in dataName.indices) {
+            val food = FoodModel(dataName[i], dataPhotos[i], dataRating[i].toFloat(), dataCity[i], dataDescription[i], dataPrice[i], dataTag[i])
+            listFood.add(food)
+        }
+
+        //val classFood = arrayListOf("Ayam Betutu", "Gado-gado Betawi", "Kue Cucur", "Kue Serabi","Lumpia", "Pecel Lele", "Rawon", "Roti Ganjel Rel", "Sambal Matah", "Sate Lilit", "Sate Madura", "Seblak", "Semur Jengkol", "Tahu Petis", "Wingko Babat", "Model Belum Terlalu Ahli")
+        binding.tvPredict.setText(listFood[maxPos].name)
+        binding.detailButton.visibility = View.VISIBLE
+
+        data.name = listFood[maxPos].name
+        data.image = listFood[maxPos].image
+        data.rating = listFood[maxPos].rating
+        data.city = listFood[maxPos].city
+        data.description = listFood[maxPos].description
+        data.price = listFood[maxPos].price
+        data.tag = listFood[maxPos].tag
 
         foodModel.close()
     }
@@ -157,6 +186,18 @@ class ScanFragment : Fragment() {
 //            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
 //            startActivityForResult(intent, 1)
         }
+
+        binding.detailButton.setOnClickListener {
+            val intent = Intent(requireContext(), DetailActivity::class.java)
+            //intent.putExtra("DATA", FoodModel("Indonesia", "https://static6.depositphotos.com/1011646/544/i/600/depositphotos_5440451-stock-photo-flag-of-indonesia.jpg", 4f, "Bengkulu", "XXXXX", "Rp. 40.000", "#bengkulu"))
+            intent.putExtra("DATA", data)
+            startActivity(intent)
+        }
+
+        Glide.with(requireContext())
+            .load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6zes53m4a_2VLTcmTn_bHk8NO5SkuWfcQbg&usqp=CAU")
+            .circleCrop()
+            .into(binding.ivProfil)
     }
 
     override fun onRequestPermissionsResult(
