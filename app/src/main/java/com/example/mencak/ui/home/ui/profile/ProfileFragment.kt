@@ -21,6 +21,7 @@ import com.example.mencak.R
 import com.example.mencak.adapter.SectionProfileAdapter
 import com.example.mencak.databinding.FragmentHomeBinding
 import com.example.mencak.databinding.FragmentProfileBinding
+import com.example.mencak.ui.AboutFragment
 import com.example.mencak.ui.home.ui.home.HomeViewModel
 import com.google.firebase.auth.FirebaseAuth
 
@@ -56,7 +57,8 @@ class ProfileFragment : Fragment() {
             .into(binding.ivProfil)
 
         binding.iconInfo.setOnClickListener {
-           //
+           var dialog = AboutFragment()
+            dialog.showsDialog
         }
     }
 

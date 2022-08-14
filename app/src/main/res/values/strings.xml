@@ -64,6 +64,18 @@
     <string name="see_all">See all</string>
     <string name="populer_tag">Populer Tag</string>
 
+    <string name="about_us">About Us</string>
+    <string name="md">MD Path</string>
+    <string name="ml">ML Path</string>
+    <string name="cc">CC Path</string>
+    <string name="md_1">Mufti Restu M \nUNIB</string>
+    <string name="md_2">Adde Nanda C.P \nUNIB</string>
+    <string name="ml_1">M Daffa A \nUNIB</string>
+    <string name="ml_2">Maria Misela A.W \nUNINDRA</string>
+    <string name="cc_1">Khoirus Fauzi R \nITS</string>
+    <string name="cc_2">M Aditya M \nUNSYIAH</string>
+
+
     <string-array name="data_food_name">
         <item>Ayam Betutu</item>
         <item>Gado-gado Betawi</item>

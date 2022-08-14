@@ -10,11 +10,9 @@
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/drawable/bg_scan_food.xml" value="0.1515" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.1515" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/drawable/ic_baseline_fastfood_24.xml" value="0.1515" />
-        <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.1515" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1515" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/drawable/ic_picture_empty.xml" value="0.1515" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/drawable/search_border.xml" value="0.1515" />
-        <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_create_post.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_detail.xml" value="0.23796296296296296" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_detail_post.xml" value="0.23796296296296296" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_home.xml" value="0.259375" />
@@ -22,7 +20,7 @@
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_main.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_register.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_review_food.xml" value="0.259375" />
-        <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/activity_splash_screen.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/fragment_dashboard.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/fragment_food.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/fragment_history.xml" value="0.259375" />
@@ -31,12 +29,10 @@
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/fragment_profile.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/fragment_scan.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/fragment_update_profile.xml" value="0.259375" />
-        <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_comment_post.xml" value="0.2453125" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_food_your_location_horizontal.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_history_food.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_list_food.xml" value="0.23796296296296296" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_populer_tag.xml" value="0.259375" />
-        <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/layout/item_post.xml" value="0.259375" />
         <entry key="..\:/Project Android/Android Intermediate/Mencak/app/src/main/res/menu/bottom_nav_menu.xml" value="0.259375" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2855" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/drawable/ic_place_holder.xml" value="0.2855" />
@@ -44,8 +40,13 @@
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/activity_detail.xml" value="0.2557291666666667" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/activity_detail_post.xml" value="0.28958333333333336" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/activity_home.xml" value="0.2554347826086957" />
+        <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/activity_login.xml" value="0.2477355072463768" />
+        <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/activity_register.xml" value="0.2477355072463768" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/fragment_about.xml" value="0.33" />
+        <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/fragment_food.xml" value="0.2557291666666667" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/fragment_home.xml" value="0.2557291666666667" />
+        <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/fragment_scan.xml" value="0.22" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/item_comment_post.xml" value="0.28958333333333336" />
         <entry key="..\:/Users/win 10/AndroidStudioProjects/Mencak/app/src/main/res/layout/item_history_food.xml" value="0.28958333333333336" />
@@ -55,7 +56,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
