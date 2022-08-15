@@ -21,11 +21,11 @@
         android:contentDescription="@string/signup" />
 
     <TextView
+        android:alpha="0"
         android:id="@+id/titleTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="@string/title_signup_page"
         android:textColor="@color/black"
@@ -38,6 +38,7 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal" />
 
     <TextView
+        android:alpha="0"
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:alpha="0"
         android:id="@+id/nameEditTextLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
@@ -70,6 +72,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
+        android:alpha="0"
         android:id="@+id/emailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,6 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameEditTextLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:alpha="0"
         android:id="@+id/emailEditTextLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
@@ -101,6 +105,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
+        android:alpha="0"
         android:id="@+id/passwordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -112,6 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:alpha="0"
         android:id="@+id/passwordEditTextLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
@@ -134,10 +140,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:alpha="0"
         android:id="@+id/signupButton"
-        android:layout_width="98dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/bg_scan_food"
         android:textAllCaps="false"
         android:text="@string/signup"
@@ -146,6 +153,7 @@
         app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
 
     <TextView
+        android:alpha="0"
         android:id="@+id/loginTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -157,6 +165,7 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
 
     <TextView
+        android:alpha="0"
         android:id="@+id/loginTextViewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="350dp"
-    android:layout_height="350dp"
+    android:layout_width="370dp"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:padding="12dp"
     android:background="@drawable/search_border"
     tools:context=".ui.AboutFragment">
 
@@ -13,6 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/about_us"
+        android:fontFamily="@font/alata"
+        android:textColor="#D61C4E"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,6 +29,8 @@
         android:layout_height="wrap_content"
         android:text="@string/ml"
         android:textSize="20sp"
+        android:textColor="#D61C4E"
+        android:fontFamily="@font/alata"
         app:layout_constraintBottom_toTopOf="@+id/about_img_1"
         app:layout_constraintEnd_toEndOf="@+id/about_img_2"
         app:layout_constraintStart_toStartOf="@+id/about_img_2"
@@ -37,6 +42,8 @@
         android:layout_height="wrap_content"
         android:text="@string/md"
         android:textSize="20sp"
+        android:textColor="#D61C4E"
+        android:fontFamily="@font/alata"
         app:layout_constraintBottom_toTopOf="@+id/about_img_1"
         app:layout_constraintEnd_toEndOf="@+id/about_img_1"
         app:layout_constraintStart_toStartOf="@+id/about_img_1"
@@ -48,6 +55,8 @@
         android:layout_height="wrap_content"
         android:text="@string/cc"
         android:textSize="20sp"
+        android:textColor="#D61C4E"
+        android:fontFamily="@font/alata"
         app:layout_constraintBottom_toTopOf="@+id/about_img_1"
         app:layout_constraintEnd_toEndOf="@+id/about_img_3"
         app:layout_constraintStart_toStartOf="@+id/about_img_3"
@@ -90,7 +99,7 @@
         app:layout_constraintEnd_toEndOf="@+id/about_img_2"
         app:layout_constraintStart_toStartOf="@+id/about_img_2"
         app:layout_constraintTop_toBottomOf="@+id/about_img_2"
-        tools:text="@string/ml_1" />
+        android:text="@string/ml_1" />
 
     <ImageView
         android:id="@+id/about_img_5"
@@ -129,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="@+id/about_img_5"
         app:layout_constraintStart_toStartOf="@+id/about_img_5"
         app:layout_constraintTop_toBottomOf="@+id/about_img_5"
-        tools:text="@string/ml_2" />
+        android:text="@string/ml_2" />
 
     <ImageView
         android:id="@+id/about_img_4"
@@ -156,7 +165,7 @@
         app:layout_constraintEnd_toEndOf="@+id/about_img_1"
         app:layout_constraintStart_toStartOf="@+id/about_img_1"
         app:layout_constraintTop_toBottomOf="@+id/about_img_1"
-        tools:text="@string/md_1" />
+        android:text="@string/md_1" />
 
     <TextView
         android:id="@+id/about_text_4"
@@ -171,7 +180,7 @@
         app:layout_constraintEnd_toEndOf="@+id/about_img_4"
         app:layout_constraintStart_toStartOf="@+id/about_img_4"
         app:layout_constraintTop_toBottomOf="@+id/about_img_4"
-        tools:text="@string/md_2" />
+        android:text="@string/md_2" />
 
     <ImageView
         android:id="@+id/about_img_3"
@@ -199,7 +208,7 @@
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="@+id/about_img_6"
         app:layout_constraintTop_toBottomOf="@+id/about_img_6"
-        tools:text="@string/cc_1" />
+        android:text="@string/cc_1" />
 
     <TextView
         android:id="@+id/about_text_2"
@@ -215,6 +224,6 @@
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="@+id/about_img_3"
         app:layout_constraintTop_toBottomOf="@+id/about_img_3"
-        tools:text="@string/cc_2" />
+        android:text="@string/cc_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

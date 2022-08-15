@@ -158,7 +158,7 @@ class LoginActivity : AppCompatActivity() {
         }.start()
 
         val loginTitle = ObjectAnimator.ofFloat(binding.textView, View.ALPHA, 1f).setDuration(500)
-//        val title = ObjectAnimator.ofFloat(binding.titleTextView, View.ALPHA, 1f).setDuration(500)
+//        val title = ObjectAnimator.ofFloat(binding.textView, View.ALPHA, 1f).setDuration(500)
 //        val messageTitle =
 //            ObjectAnimator.ofFloat(binding.messageTextView, View.ALPHA, 1f).setDuration(500)
         val email = ObjectAnimator.ofFloat(binding.textView2, View.ALPHA, 1f).setDuration(500)
@@ -171,9 +171,11 @@ class LoginActivity : AppCompatActivity() {
         val signup = ObjectAnimator.ofFloat(binding.textView4, View.ALPHA, 1f).setDuration(500)
         val signupLink =
             ObjectAnimator.ofFloat(binding.signupTextViewButton, View.ALPHA, 1f).setDuration(500)
+        val btnLogin =
+            ObjectAnimator.ofFloat(binding.loginBtn, View.ALPHA, 1f).setDuration(500)
 
         val together = AnimatorSet().apply {
-            playTogether(loginTitle, email, emailEdit, password, passwordEdit, signup, signupLink)
+            playTogether(loginTitle, email, emailEdit, password, passwordEdit, signup, signupLink, btnLogin)
         }
 
 //        val togethermessage = AnimatorSet().apply {

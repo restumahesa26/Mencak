@@ -16,6 +16,7 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.example.mencak.R
 import com.example.mencak.adapter.SectionProfileAdapter
@@ -57,8 +58,13 @@ class ProfileFragment : Fragment() {
             .into(binding.ivProfil)
 
         binding.iconInfo.setOnClickListener {
-           var dialog = AboutFragment()
-            dialog.showsDialog
+//            activity?.supportFragmentManager
+//                ?.beginTransaction()
+//                ?.replace(R.id.container, AboutFragment.newInstance("", ""), "aboutFragment")
+//                ?.commit()
+            val pop = AboutFragment()
+            val fm = activity?.supportFragmentManager!!
+            pop.show(fm, "aa")
         }
     }
 

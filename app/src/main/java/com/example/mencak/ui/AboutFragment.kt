@@ -1,55 +1,74 @@
 package com.example.mencak.ui
 
+import android.content.res.Resources
+import android.graphics.Color
+import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import androidx.fragment.app.DialogFragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mencak.R
+import com.example.mencak.databinding.FragmentAboutBinding
+import com.example.mencak.databinding.FragmentProfileBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AboutFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AboutFragment : DialogFragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        layoutInflater
-
-    }
+    private var _binding: FragmentAboutBinding? = null
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false)
+    ): View {
+        _binding = FragmentAboutBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AboutFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AboutFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onStart() {
+        super.onStart()
+        dialog?.let {
+            val percent = 90f / 100
+            val dm = Resources.getSystem().displayMetrics
+            val rect = dm.run { Rect(0, 0, widthPixels, heightPixels) }
+            val percentWidth = rect.width() * percent
+            val height = ViewGroup.LayoutParams.WRAP_CONTENT
+            it.window?.setLayout(percentWidth.toInt(), height)
+            it.window?.setBackgroundDrawable(resources.getDrawable(R.drawable.border_dialog))
+        }
+        Glide.with(requireContext())
+            .load(resources.getDrawable(R.drawable.image_md_1))
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(binding.aboutImg1)
+        Glide.with(requireContext())
+            .load(resources.getDrawable(R.drawable.image_ml1))
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(binding.aboutImg2)
+        Glide.with(requireContext())
+            .load(resources.getDrawable(R.drawable.image_cc1))
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(binding.aboutImg3)
+        Glide.with(requireContext())
+            .load(resources.getDrawable(R.drawable.image_md_2))
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(binding.aboutImg4)
+        Glide.with(requireContext())
+            .load(resources.getDrawable(R.drawable.image_ml2))
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(binding.aboutImg5)
+        Glide.with(requireContext())
+            .load(resources.getDrawable(R.drawable.image_cc2))
+            .transforms(CenterCrop(), RoundedCorners(16))
+            .into(binding.aboutImg6)
     }
 }

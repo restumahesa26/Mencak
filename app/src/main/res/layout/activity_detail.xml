@@ -21,6 +21,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:scaleType="centerCrop"
+                android:transitionName="foodImage"
                 tools:srcCompat="@tools:sample/avatars"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +36,7 @@
                 tools:text="Food Name"
                 android:textColor="#000"
                 android:textSize="18sp"
+                android:transitionName="foodName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ivDetailFood"
                 app:layout_constraintTop_toTopOf="@+id/ivDetailFood" />
@@ -46,12 +48,14 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_medium"
                 android:text="Rating"
+                android:transitionName="foodRating"
                 android:textColor="#000"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/tvDetailFoodName"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailFoodName" />
 
             <RatingBar
+                android:transitionName="foodRatingValue"
                 android:layout_marginTop="4dp"
                 android:id="@+id/ratingBarDetailFood"
                 style="?android:attr/ratingBarStyleSmall"
@@ -64,6 +68,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailFoodRating" />
 
             <TextView
+                android:transitionName="foodPrice"
                 android:layout_marginTop="8dp"
                 android:id="@+id/tvDetailFoodPrice"
                 android:layout_width="0dp"
@@ -76,6 +81,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/ratingBarDetailFood" />
 
             <TextView
+                android:transitionName="foodPriceValue"
                 android:layout_marginTop="4dp"
                 android:id="@+id/tvDetailFoodPriceValue"
                 android:layout_width="0dp"
@@ -90,6 +96,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
+            android:transitionName="foodTag"
             android:layout_marginTop="12dp"
             android:id="@+id/tvTagDetailFood"
             android:layout_width="wrap_content"
@@ -101,6 +108,7 @@
             android:textSize="18sp"/>
 
         <TextView
+            android:transitionName="foodCity"
             android:id="@+id/tvDetailFoodCityValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,6 +119,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:transitionName="foodDescription"
             android:layout_marginTop="12dp"
             android:id="@+id/tvDetailFoodDescription"
             android:layout_width="wrap_content"
@@ -121,6 +130,7 @@
             android:textSize="18sp"/>
 
         <TextView
+            android:transitionName="foodDescriptionValue"
             android:layout_marginTop="8dp"
             android:id="@+id/tvDetailFoodDescriptionValue"
             android:layout_width="wrap_content"

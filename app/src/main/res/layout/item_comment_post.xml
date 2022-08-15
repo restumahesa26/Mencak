@@ -10,7 +10,6 @@
         android:id="@+id/ivPostUser"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/ic_picture_empty"
         app:layout_constraintStart_toStartOf="parent"
